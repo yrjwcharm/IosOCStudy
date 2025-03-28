@@ -14,6 +14,9 @@
 		59BA0C4F2D90279900872A01 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 59BA0C4E2D90279900872A01 /* Base */; };
 		59BA0C522D90279900872A01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BA0C512D90279900872A01 /* main.m */; };
 		59FA8A6E2D9039F900660530 /* MainViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FA8A6D2D9039F900660530 /* MainViewControler.m */; };
+		59FA8A782D95932500660530 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 59FA8A772D95932500660530 /* 3.png */; };
+		59FA8A7C2D96D0AA00660530 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 59FA8A792D96D0AA00660530 /* 2.png */; };
+		59FA8A7D2D96D0AA00660530 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 59FA8A7A2D96D0AA00660530 /* 1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		59BA0C512D90279900872A01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59FA8A6C2D9039F900660530 /* MainViewControler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewControler.h; sourceTree = "<group>"; };
 		59FA8A6D2D9039F900660530 /* MainViewControler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewControler.m; sourceTree = "<group>"; };
+		59FA8A772D95932500660530 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		59FA8A792D96D0AA00660530 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../2.png; sourceTree = "<group>"; };
+		59FA8A7A2D96D0AA00660530 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 				59BA0C4D2D90279900872A01 /* LaunchScreen.storyboard */,
 				59BA0C502D90279900872A01 /* Info.plist */,
 				59BA0C512D90279900872A01 /* main.m */,
+				59FA8A7A2D96D0AA00660530 /* 1.png */,
+				59FA8A792D96D0AA00660530 /* 2.png */,
+				59FA8A772D95932500660530 /* 3.png */,
 			);
 			path = helloword;
 			sourceTree = "<group>";
@@ -133,6 +142,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59FA8A7D2D96D0AA00660530 /* 1.png in Resources */,
+				59FA8A782D95932500660530 /* 3.png in Resources */,
+				59FA8A7C2D96D0AA00660530 /* 2.png in Resources */,
 				59BA0C4C2D90279900872A01 /* Assets.xcassets in Resources */,
 				59BA0C4F2D90279900872A01 /* Base in Resources */,
 				59BA0C4A2D90279700872A01 /* Base in Resources */,
