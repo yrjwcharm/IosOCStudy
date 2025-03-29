@@ -8,56 +8,51 @@
 #import "MainViewControler.h"
 
 @interface MainViewControler ()
-@property(nonatomic,strong) UIButton *btnLoad;
-@property(nonatomic,strong) UIButton *btnDestroy;
-@property(nonatomic,strong) NSMutableArray<UIImage *> *images;
 @end
 
 @implementation MainViewControler
-- (NSMutableArray<UIImage *> *)images{
-    if(!_images){
-        _images =[NSMutableArray array];
-    }
-    return  _images;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.btnLoad =[[UIButton alloc]init];
-       self.btnDestroy =[[UIButton alloc] initWithFrame:(CGRect){{100,300},{80,30}}];
-       [self.btnDestroy setTitle:@"销毁" forState:UIControlStateNormal];
-       [self.btnDestroy addTarget:self action:@selector(btnReleaseMemory) forControlEvents:UIControlEventTouchUpInside];
-    [self.btnDestroy setBackgroundColor:[UIColor redColor]];
-       self.btnLoad.frame= CGRectMake(20, 20, 100, 100);
-       self.btnLoad.backgroundColor=[UIColor greenColor];
-       [self.view addSubview:self.btnDestroy];
-       [self.btnLoad setTitle:@"点击我" forState:UIControlStateNormal];
-       [self.btnLoad addTarget:self
-                   action:@selector(loadImage)  // 关联方法
-        forControlEvents:UIControlEventTouchUpInside]; // 事件类型
-       [self.view addSubview:self.btnLoad];
-}
-- (void) loadImage{
-    for (int i =0; i<3; i++) {
-//        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%d",i+1]];
-        UIImage *image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d",i+1] ofType:@"png"]];
-        [self.images addObject:image];
-    }
-    NSLog(@"走了呀%zd",self.images.count);
+//    UIButtonTypeCustom = 0,                         // no button type
+//    UIButtonTypeSystem API_AVAILABLE(ios(7.0)),  // standard system button
+//
+//    UIButtonTypeDetailDisclosure,
+//    UIButtonTypeInfoLight,
+//    UIButtonTypeInfoDark,
+//    UIButtonTypeContactAdd,
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(40 ,  40, 357, 300);
+//    btn.titleLabel.text =@"去死吧";
+//    [btn setBackgroundColor:[UIColor redColor]];
+    [btn setTitle:@"普通按钮" forState: UIControlStateNormal];
+    [btn setTitle:@"高亮按钮" forState:UIControlStateHighlighted];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor greenColor] forState:UIControlStateHighlighted ];
+    [btn setTitleShadowColor:[UIColor yellowColor] forState:UIControlStateNormal];
+    [btn setTitleShadowColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    btn.titleLabel.shadowOffset=CGSizeMake(-1, -2);
+    [btn setImage:[UIImage imageNamed:@"3"] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"1"] forState:UIControlStateHighlighted];
+//    [btn setTitleShadowOffset:CGSizeMake(-1, -2)];
+//    btn.imageView.backgroundColor=[UIColor greenColor];
+    [btn setBackgroundImage:[UIImage imageNamed:@"1.png"] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageNamed:@"3.png"] forState:UIControlStateHighlighted];
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+//    [btn addTarget:self action:@selector(<#selector#>) forControlEvents:<#(UIControlEvents)#>]
+    [self.view addSubview:btn];
     
 }
-- (void) btnReleaseMemory{
-    [self.images removeAllObjects];
-    NSLog(@"销毁%zd",self.images.count);
-    self.images = nil;
+- (IBAction)btnClick:(id)sender {
+    // 1. 检查 sender 是否为 UIButton 类型
+       if ([sender isKindOfClass:[UIButton class]]) {
+           // 2. 安全类型转换
+           UIButton *button = (UIButton *)sender;
+           button.enabled = NO; // 禁用按钮
+       } else {
+           // 非 UIButton 类型时的处理（如打印警告）
+           NSLog(@"警告：sender 不是 UIButton 类型，实际类型：%@", [sender class]);
+       }
+   
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
