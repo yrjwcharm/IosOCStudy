@@ -10,8 +10,15 @@
 NS_ASSUME_NONNULL_BEGIN
 /**数据模型*/
 @interface XMGShop : NSObject
+/**商品名称**/
 @property(nonatomic,copy) NSString *name;
+/**商品icon*/
 @property(nonatomic,copy) NSString *icon;
+- (instancetype) initWithIcon:(NSString *) icon  name:(NSString *) name;
++ (instancetype) shop:(NSString *) icon  name:(NSString *) name;
+- (instancetype) initWithDic:(NSDictionary *)dic;
++ (instancetype) shopWithDic:(NSDictionary *) dic;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -8,19 +8,21 @@
 #import "ViewControler.h"
 #import "XMGShop.h"
 @interface ViewController ()
-@property(nonatomic,strong) NSMutableArray *array;
+@property(nonatomic,strong) NSArray *array;
 @end
 
 @implementation ViewController
-- (NSMutableArray *)array{
+- (NSArray *)array{
     if(_array==nil){
         NSString *path =[[NSBundle mainBundle] pathForResource:@"test.plist" ofType:nil];
         NSMutableArray *array =[NSMutableArray arrayWithContentsOfFile:path];
         NSMutableArray *tmpArray=[NSMutableArray array];
-        for (NSDictionary *dic in array) {
-            XMGShop *shop = [[XMGShop alloc] init];
-            shop.name = dic[@"name"];
-            shop.icon =dic[@"icon"];
+        for (NSDictionary *dic in self.array) {
+//            XMGShop *shop = [[XMGShop alloc] initWithIcon:dic[@"icon"] name:dic[@"name"]];
+//            XMGShop *shop = [XMGShop shop:dic[@"icon"] name:dic[@"name"]];
+//            shop.name = dic[@"name"];
+//            shop.icon =dic[@"icon"];
+            XMGShop *shop =[[XMGShop alloc] initWithDic:dic];
             [tmpArray addObject:shop];
         }
         self.array =tmpArray;
@@ -29,9 +31,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
 }
 - (IBAction)btnTest:(UIButton *)button {
-    NSLog(@"测试%@",self.array);
+    NSLog(@"测试%@",(self.array));
 }
 @end
