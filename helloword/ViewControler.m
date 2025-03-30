@@ -6,34 +6,24 @@
 //
 
 #import "ViewControler.h"
-#import "XMGShop.h"
 @interface ViewController ()
 @property(nonatomic,strong) NSArray *array;
 @end
 
 @implementation ViewController
-- (NSArray *)array{
-    if(_array==nil){
-        NSString *path =[[NSBundle mainBundle] pathForResource:@"test.plist" ofType:nil];
-        NSMutableArray *array =[NSMutableArray arrayWithContentsOfFile:path];
-        NSMutableArray *tmpArray=[NSMutableArray array];
-        for (NSDictionary *dic in self.array) {
-//            XMGShop *shop = [[XMGShop alloc] initWithIcon:dic[@"icon"] name:dic[@"name"]];
-//            XMGShop *shop = [XMGShop shop:dic[@"icon"] name:dic[@"name"]];
-//            shop.name = dic[@"name"];
-//            shop.icon =dic[@"icon"];
-            XMGShop *shop =[[XMGShop alloc] initWithDic:dic];
-            [tmpArray addObject:shop];
-        }
-        self.array =tmpArray;
-    }
-    return _array;
-}
+
+/// 展示XIB
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //方式一:
+//    UIView *carView = [[[NSBundle mainBundle] loadNibNamed:@"Car" owner:nil options:nil] firstObject];
+    //方式二
+    UINib *nib =[UINib nibWithNibName:@"Car" bundle:[NSBundle mainBundle]];
+    UIView *carView =[[nib instantiateWithOwner:nil options:nil] lastObject];
+    //不用设置Frame默认就会显示XibFrame,即使你设置了尺寸无效 ，但是背景颜色更改，后续AutoLayout才有用
+//    carView.frame = CGRectMake(0, 40, self.view.frame.size.width, 150);
+    [self.view addSubview:carView];
 
-}
-- (IBAction)btnTest:(UIButton *)button {
-    NSLog(@"测试%@",(self.array));
 }
 @end

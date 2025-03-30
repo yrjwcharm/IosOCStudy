@@ -18,7 +18,7 @@
 		59FA8A7C2D96D0AA00660530 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 59FA8A792D96D0AA00660530 /* 2.png */; };
 		59FA8A7D2D96D0AA00660530 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 59FA8A7A2D96D0AA00660530 /* 1.png */; };
 		59FA8A802D98376900660530 /* test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59FA8A7F2D98376900660530 /* test.plist */; };
-		59FA8A862D99023300660530 /* XMGShop.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FA8A852D99023300660530 /* XMGShop.m */; };
+		59FA8A882D994B0500660530 /* Car.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59FA8A872D994B0500660530 /* Car.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +38,7 @@
 		59FA8A792D96D0AA00660530 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../2.png; sourceTree = "<group>"; };
 		59FA8A7A2D96D0AA00660530 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		59FA8A7F2D98376900660530 /* test.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = test.plist; sourceTree = "<group>"; };
-		59FA8A842D99023300660530 /* XMGShop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGShop.h; sourceTree = "<group>"; };
-		59FA8A852D99023300660530 /* XMGShop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGShop.m; sourceTree = "<group>"; };
+		59FA8A872D994B0500660530 /* Car.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Car.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +77,9 @@
 				59BA0C432D90279700872A01 /* SceneDelegate.m */,
 				59FA8A6C2D9039F900660530 /* ViewControler.h */,
 				59FA8A6D2D9039F900660530 /* ViewControler.m */,
-				59FA8A842D99023300660530 /* XMGShop.h */,
-				59FA8A852D99023300660530 /* XMGShop.m */,
 				59BA0C482D90279700872A01 /* Main.storyboard */,
 				59BA0C4B2D90279900872A01 /* Assets.xcassets */,
+				59FA8A872D994B0500660530 /* Car.xib */,
 				59BA0C4D2D90279900872A01 /* LaunchScreen.storyboard */,
 				59BA0C502D90279900872A01 /* Info.plist */,
 				59FA8A7F2D98376900660530 /* test.plist */,
@@ -157,6 +155,7 @@
 				59BA0C4C2D90279900872A01 /* Assets.xcassets in Resources */,
 				59BA0C4F2D90279900872A01 /* Base in Resources */,
 				59BA0C4A2D90279700872A01 /* Base in Resources */,
+				59FA8A882D994B0500660530 /* Car.xib in Resources */,
 				59FA8A802D98376900660530 /* test.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,7 +169,6 @@
 			files = (
 				59BA0C412D90279700872A01 /* AppDelegate.m in Sources */,
 				59BA0C522D90279900872A01 /* main.m in Sources */,
-				59FA8A862D99023300660530 /* XMGShop.m in Sources */,
 				59FA8A6E2D9039F900660530 /* ViewControler.m in Sources */,
 				59BA0C442D90279700872A01 /* SceneDelegate.m in Sources */,
 			);
