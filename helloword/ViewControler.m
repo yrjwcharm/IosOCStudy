@@ -1,22 +1,22 @@
 //
-//  MainViewControler.m
+//  ViewController.m
 //  helloword
 //
 //  Created by 闫瑞锋 on 2025/3/23.
 //
 
-#import "MainViewControler.h"
+#import "ViewControler.h"
 
-@interface MainViewControler ()
+@interface ViewController ()
 @end
 
-@implementation MainViewControler
+@implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
 }
 - (void) btnClick{
-
+    NSLog(@"单击测试");
 }
 @end
