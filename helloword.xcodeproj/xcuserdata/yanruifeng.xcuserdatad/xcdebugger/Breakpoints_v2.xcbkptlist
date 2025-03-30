@@ -3,4 +3,52 @@
    uuid = "B372D456-9487-414D-A8C2-6CFDE15E361B"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AFEB8B9B-6821-436C-846A-A67896B7A14A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "helloword/ViewControler.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "-array"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AFEB8B9B-6821-436C-846A-A67896B7A14A - d85bb0e379735bd6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ViewController viewDidLoad]"
+                  moduleName = "helloword"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yanruifeng/Desktop/helloword/helloword/ViewControler.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26">
+               </Location>
+               <Location
+                  uuid = "AFEB8B9B-6821-436C-846A-A67896B7A14A - 14b96fb2f6601a01"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ViewController array]"
+                  moduleName = "helloword"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yanruifeng/Desktop/helloword/helloword/ViewControler.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
