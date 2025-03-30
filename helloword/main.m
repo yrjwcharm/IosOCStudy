@@ -13,6 +13,15 @@ int main(int argc, char * argv[]) {
     @autoreleasepool {
         // Setup code that might create autoreleased objects goes here.
         appDelegateClassName = NSStringFromClass([AppDelegate class]);
+        NSArray * array =@[@"张三" ,@"李四",@"王五",@"赵六"];
+        BOOL ifFlag = [array writeToFile:@"/Users/yanruifeng/Desktop/helloword/helloword/test.plist" atomically:YES];
+        if(ifFlag){
+            NSLog(@"写入成功");
+        }
+        NSLog(@"%@",array);
+        NSString *path =[[NSBundle mainBundle] pathForResource:@"test.plist" ofType:nil];
+        NSArray *readArr = [NSArray arrayWithContentsOfFile:path];
+        NSLog(@"%@",[readArr componentsJoinedByString:@","]);
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }
