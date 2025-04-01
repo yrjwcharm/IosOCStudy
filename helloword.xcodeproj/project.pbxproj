@@ -18,7 +18,8 @@
 		59FA8A7C2D96D0AA00660530 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 59FA8A792D96D0AA00660530 /* 2.png */; };
 		59FA8A7D2D96D0AA00660530 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 59FA8A7A2D96D0AA00660530 /* 1.png */; };
 		59FA8A802D98376900660530 /* test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59FA8A7F2D98376900660530 /* test.plist */; };
-		59FA8A8A2D99567E00660530 /* ShopCar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59FA8A892D99567E00660530 /* ShopCar.xib */; };
+		59FA8A9E2D9C1C3A00660530 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 59FA8A9D2D9C1C3900660530 /* app_icon.png */; };
+		59FA8AA12D9C1EFA00660530 /* XMGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FA8AA02D9C1EFA00660530 /* XMGButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +39,9 @@
 		59FA8A792D96D0AA00660530 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../2.png; sourceTree = "<group>"; };
 		59FA8A7A2D96D0AA00660530 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		59FA8A7F2D98376900660530 /* test.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = test.plist; sourceTree = "<group>"; };
-		59FA8A892D99567E00660530 /* ShopCar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopCar.xib; sourceTree = "<group>"; };
+		59FA8A9D2D9C1C3900660530 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon.png; sourceTree = "<group>"; };
+		59FA8A9F2D9C1EFA00660530 /* XMGButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGButton.h; sourceTree = "<group>"; };
+		59FA8AA02D9C1EFA00660530 /* XMGButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +80,9 @@
 				59BA0C432D90279700872A01 /* SceneDelegate.m */,
 				59FA8A6C2D9039F900660530 /* ViewControler.h */,
 				59FA8A6D2D9039F900660530 /* ViewControler.m */,
+				59FA8A9F2D9C1EFA00660530 /* XMGButton.h */,
+				59FA8AA02D9C1EFA00660530 /* XMGButton.m */,
 				59BA0C482D90279700872A01 /* Main.storyboard */,
-				59FA8A892D99567E00660530 /* ShopCar.xib */,
 				59BA0C4B2D90279900872A01 /* Assets.xcassets */,
 				59BA0C4D2D90279900872A01 /* LaunchScreen.storyboard */,
 				59BA0C502D90279900872A01 /* Info.plist */,
@@ -87,6 +91,7 @@
 				59FA8A7A2D96D0AA00660530 /* 1.png */,
 				59FA8A792D96D0AA00660530 /* 2.png */,
 				59FA8A772D95932500660530 /* 3.png */,
+				59FA8A9D2D9C1C3900660530 /* app_icon.png */,
 			);
 			path = helloword;
 			sourceTree = "<group>";
@@ -149,11 +154,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59FA8A9E2D9C1C3A00660530 /* app_icon.png in Resources */,
 				59FA8A7D2D96D0AA00660530 /* 1.png in Resources */,
 				59FA8A782D95932500660530 /* 3.png in Resources */,
 				59FA8A7C2D96D0AA00660530 /* 2.png in Resources */,
 				59BA0C4C2D90279900872A01 /* Assets.xcassets in Resources */,
-				59FA8A8A2D99567E00660530 /* ShopCar.xib in Resources */,
 				59BA0C4F2D90279900872A01 /* Base in Resources */,
 				59BA0C4A2D90279700872A01 /* Base in Resources */,
 				59FA8A802D98376900660530 /* test.plist in Resources */,
@@ -167,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59FA8AA12D9C1EFA00660530 /* XMGButton.m in Sources */,
 				59BA0C412D90279700872A01 /* AppDelegate.m in Sources */,
 				59BA0C522D90279900872A01 /* main.m in Sources */,
 				59FA8A6E2D9039F900660530 /* ViewControler.m in Sources */,
