@@ -10,6 +10,7 @@
 		599A3F532D9FA81F0039C939 /* gtui_search_bar_search_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 599A3F502D9FA81E0039C939 /* gtui_search_bar_search_icon.png */; };
 		599A3F542D9FA81F0039C939 /* head_course_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 599A3F512D9FA81F0039C939 /* head_course_icon.png */; };
 		599A3F552D9FA81F0039C939 /* gtui_search_bar_scan_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 599A3F522D9FA81F0039C939 /* gtui_search_bar_scan_icon.png */; };
+		599A3F572D9FEEF60039C939 /* jieping.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 599A3F562D9FEEF50039C939 /* jieping.jpg */; };
 		59BA0C412D90279700872A01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BA0C402D90279700872A01 /* AppDelegate.m */; };
 		59BA0C442D90279700872A01 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BA0C432D90279700872A01 /* SceneDelegate.m */; };
 		59BA0C4A2D90279700872A01 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 59BA0C492D90279700872A01 /* Base */; };
@@ -24,6 +25,7 @@
 		599A3F502D9FA81E0039C939 /* gtui_search_bar_search_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gtui_search_bar_search_icon.png; sourceTree = "<group>"; };
 		599A3F512D9FA81F0039C939 /* head_course_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head_course_icon.png; sourceTree = "<group>"; };
 		599A3F522D9FA81F0039C939 /* gtui_search_bar_scan_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gtui_search_bar_scan_icon.png; sourceTree = "<group>"; };
+		599A3F562D9FEEF50039C939 /* jieping.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jieping.jpg; sourceTree = "<group>"; };
 		59BA0C3C2D90279700872A01 /* helloword.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloword.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BA0C3F2D90279700872A01 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		59BA0C402D90279700872A01 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				599A3F522D9FA81F0039C939 /* gtui_search_bar_scan_icon.png */,
 				599A3F502D9FA81E0039C939 /* gtui_search_bar_search_icon.png */,
 				599A3F512D9FA81F0039C939 /* head_course_icon.png */,
+				599A3F562D9FEEF50039C939 /* jieping.jpg */,
 			);
 			path = helloword;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				599A3F552D9FA81F0039C939 /* gtui_search_bar_scan_icon.png in Resources */,
 				59BA0C4F2D90279900872A01 /* Base in Resources */,
 				59BA0C4A2D90279700872A01 /* Base in Resources */,
+				599A3F572D9FEEF60039C939 /* jieping.jpg in Resources */,
 				59FA8A802D98376900660530 /* test.plist in Resources */,
 				599A3F542D9FA81F0039C939 /* head_course_icon.png in Resources */,
 			);
