@@ -6,34 +6,43 @@
 //
 
 #import "ViewControler.h"
-#import "XMGButton.h"
 @interface ViewController ()
-@property(nonatomic,strong) NSArray *array;
+@property (weak, nonatomic) IBOutlet UIButton *btnForgetPwd;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    XMGButton *button = [XMGButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0, 80, self.view.bounds.size.width, 300);
-    button.backgroundColor =[UIColor greenColor];
-    [button setTitle:@"普通按钮" forState:UIControlStateNormal];
-    [button setImage:[UIImage imageNamed:@"app_icon.png"] forState:UIControlStateNormal];
-    //在按钮外边改的尺寸，内部都会覆盖
-//    if (@available(iOS 15.0, *)) {
-//        UIButtonConfiguration *config = [UIButtonConfiguration plainButtonConfiguration];
-//        
-//        // 图片配置
-//        config.image = [UIImage systemImageNamed:@"cart"];
-//        config.imagePadding = 10; // 图片与标题间距
-//        config.imagePlacement = NSDirectionalRectEdgeTop; // 图片在上方
-//        // 标题配置
-//        config.title = @"Shop";
-//        config.titleAlignment = UIButtonConfigurationTitleAlignmentCenter;
-//        
-//        button.configuration = config;
-//    }
-    [self.view addSubview:button];
+   #pragma 代码创建 IOS 15 ,* 及以下都可以使用
+//        UIButton *button =[UIButton buttonWithType:UIButtonTypeCustom];
+//        [button setTitle:@"测试" forState:UIControlStateNormal];
+//        [button setImage:[UIImage imageNamed:@"gtui_search_bar_scan_icon.png"] forState:UIControlStateNormal];
+//        button.backgroundColor =[UIColor greenColor];
+//        button.frame =CGRectMake(80, 80, 200, 80);
+//        button.contentEdgeInsets =UIEdgeInsetsMake(0, 70, 0, 0);
+//        [self.view addSubview:button];
+    #pragma toryboard/XIB 隐患  在 Interface Builder 中设置的属性可能自动转换为配置对象，导致旧代码失效。
+    
+//    self.btnForgetPwd.frame = CGRectMake(80, 80, 200, 80);
+//    self.btnForgetPwd.contentEdgeInsets = UIEdgeInsetsMake(0,70,0,0);
+#pragma IOS15 ,* 及以上 只要使用了 UIButtonConfiguration
+// 以下代码不会生效（无编译错误，但实际无效） button.contentEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 20);
+//    UIButtonConfiguration *config = [self.btnForgetPwd configuration] ? : [UIButtonConfiguration plainButtonConfiguration];
+//    config.title =@"测试111111";
+//    config.image=[UIImage imageNamed:@"gtui_search_bar_scan_icon.png"];
+//    config.contentInsets=NSDirectionalEdgeInsetsMake(0, 70, 0, 20);
+//    [self.btnForgetPwd setConfiguration:config];
+    // 完全迁移到新 API（推荐）
+    if (@available(iOS 15.0, *)) {
+        UIButtonConfiguration *config = [self.btnForgetPwd configuration] ? : [UIButtonConfiguration plainButtonConfiguration];
+        config.contentInsets = NSDirectionalEdgeInsetsMake(0, 70, 0, 0); // 新方式
+        self.btnForgetPwd.configuration = config;
+    } else {
+        self.btnForgetPwd.contentEdgeInsets = UIEdgeInsetsMake(0, 70, 0, 0); // 旧方式
+    }
+}
+
+- (IBAction)button:(UIButton *)sender {
 }
 @end
