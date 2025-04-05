@@ -21,6 +21,8 @@
     UIImageView *imageView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"jieping.jpg"]];
     [self.scrollView addSubview:imageView];
     self.scrollView.contentSize =imageView.bounds.size;
+    //内容偏移量 1、作用控制内容滚动的位置 2、得到内容滚动的位置
+    self.scrollView.contentOffset =CGPointMake(200, 100);
 //    self.scrollView.showsVerticalScrollIndicator = NO;
 //    self.scrollView.showsHorizontalScrollIndicator  = NO;
 
@@ -36,6 +38,10 @@
     //若不设置contentSize不能滚动，但是他总是有弹簧效果的用户希望下拉刷新，-----------------------------
 //    self.scrollView.alwaysBounceVertical =YES;
 //    self.scrollView.alwaysBounceHorizontal =YES;
+}
+///点击控制器的View会自动调用这个方法
+-(void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    NSLog(@"--touchesBegan");
 }
 
 @end
