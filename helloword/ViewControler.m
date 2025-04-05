@@ -27,8 +27,26 @@
     scrollView.delegate = self;
     
 }
+//当scrollview正在滚动的时候就会自动调用这个方法。
+#pragma  mark -监听滚动 就得设置1.代理对象 2.遵守协议 3.实现scrollViewDidScroll方法
 -(void) scrollViewDidScroll:(UIScrollView *)scrollView{
-    NSLog(@"%s",__func__);
+    NSLog(@"scrollViewDidScroll------%s",__func__);
+}
+#pragma mark -即将开始拖拽
+-(void) scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    NSLog(@"scrollViewWillBeginDragging------%s",__func__);
+}
+#pragma mark -即将停止拖拽
+-(void) scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+    NSLog(@"scrollViewWillEndDragging------%s",__func__);
+}
+#pragma mark -已经停止拖拽
+-(void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    NSLog(@"scrollViewDidEndDragging------%s",__func__);
+}
+#pragma  mark -scrollview减速完毕会调用，停止滚动
+-(void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    NSLog(@"scrollViewDidEndDecelerating------%s",__func__);
 }
 //控制器View完全显示出来
 -(void) viewDidAppear:(BOOL)animated{
