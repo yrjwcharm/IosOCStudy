@@ -46,8 +46,15 @@
 -(void) textFieldDidEndEditing:(UITextField *)textField{
     NSLog(@"结束编辑");
 }
--(void) textFieldDidChangeSelection:(UITextField *)textField{
-    NSLog(@"内容改变-----%@",textField.text);
+//-(void) textFieldDidChangeSelection:(UITextField *)textField{
+//    NSLog(@"内容改变1-----%@",textField.text);
+//}
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    NSLog(@"内容改变0-----%@",textField.text);
+    if([string isEqualToString:@"1"]){
+        return NO;
+    }
+    return YES;
 }
 -(void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     //退出键盘
