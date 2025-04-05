@@ -13,7 +13,7 @@
 //只是代表控制器View加载完毕
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //id类型 任何oc类型的对象 万物皆对象
     //通过代码创建的scrollView 一开始subviews这个数组为nill
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 80, 300, 200)];
     scrollView.backgroundColor = [UIColor redColor];
