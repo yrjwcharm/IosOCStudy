@@ -32,9 +32,12 @@
     scrollView.contentSize =image.size;
     //根据oc ARC法则 一旦对象创建出来那一刻若没有强指针引用它 就会被销毁掉
     scrollView.delegate =self.car;
-    self.txtInput.delegate = self;
+    //TextField比较特殊 技可以通过addTarget 也可以通过代理
+//    self.txtInput.delegate = self;
+    [self.txtInput addTarget:self action:@selector(beginEditing) forControlEvents:UIControlEventEditingDidBegin];
+    [self.txtInput addTarget:self action:@selector(endEditing) forControlEvents:(UIControlEvents)UIControlEventEditingDidEnd];
 }
-#pragma mark - 代理方法都是控件名开头的
+#pragma mark - 1.通过代理 代理方法都是控件名开头的
 -(void) textFieldDidBeginEditing:(UITextField *)textField{
     NSLog(@"开始编辑");
 }
@@ -47,5 +50,12 @@
     //不再成为第一响应者意味着退出键盘-----, 第一响应者可以调出键盘
 //    [self.txtInput resignFirstResponder];
     [self.view endEditing:YES];  //这个常用
+}
+#pragma mark -2.通过addTarget
+-(void)beginEditing{
+    NSLog(@"开始编辑----");
+}
+-(void)endEditing{
+    NSLog(@"结束编辑----");
 }
 @end
