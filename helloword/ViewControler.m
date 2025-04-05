@@ -43,10 +43,16 @@
 #pragma mark -已经停止拖拽
 -(void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     NSLog(@"scrollViewDidEndDragging------%s",__func__);
+    if(decelerate==NO){
+        NSLog(@"用户已经停止拖拽scrollView,停止滚动");//没有减速
+    }else{
+        //代表有减速
+        NSLog(@"用户已经停止拖拽scrollView,但是scrollView由于惯性会继续滚动,减速 ");
+    }
 }
-#pragma  mark -scrollview减速完毕会调用，停止滚动
+#pragma  mark -scrollview减速完毕会调用，停止滚动 但是只通过这个方法监听远远不够，是不严谨的 又可能当scrollView停止拖拽scrollview就已经不滚动了 也就不会出发减速完毕方法
 -(void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    NSLog(@"scrollViewDidEndDecelerating------%s",__func__);
+    NSLog(@"crollview减速完毕会调用，停止滚动-----%s",__func__);
 }
 //控制器View完全显示出来
 -(void) viewDidAppear:(BOOL)animated{
