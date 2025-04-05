@@ -4,15 +4,23 @@
 //
 //  Created by 闫瑞锋 on 2025/3/23.
 //
-
 #import "ViewControler.h"
-@interface ViewController () <UIScrollViewDelegate>
+#import "XMGCar.h"
+/**
+ 验证是否是任何oc对象都可以作为ScrollView的代理
+ 苹果为什么把代理设置成weak 防止出现循环引用，导致内存泄漏
+ 代理监听控件的某些行为 代理
+ */
+@interface ViewController () <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *txtInput;
+@property(nonatomic,strong) XMGCar *car;
 @end
 
 @implementation ViewController
 //只是代表控制器View加载完毕
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.car =[[XMGCar alloc] init];
     //id类型 任何oc类型的对象 万物皆对象
     //通过代码创建的scrollView 一开始subviews这个数组为nill
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 80, 300, 200)];
@@ -22,41 +30,22 @@
     UIImageView *imageVew =[[UIImageView alloc] initWithImage:image];
     [scrollView addSubview:imageVew];
     scrollView.contentSize =image.size;
-#pragma mark - 控制器成为的代理可以,但是得必须遵守协议 self(控制器对象) 必须在interface上遵守【 但是不要公开暴漏在.h文件里,要在.m类扩展上遵守】 遵守了协议,该控制器就拥有了这个协议下的方法声明,可以去实现implementation
-    //scrollView代理属性
-    scrollView.delegate = self;
-    
+    //根据oc ARC法则 一旦对象创建出来那一刻若没有强指针引用它 就会被销毁掉
+    scrollView.delegate =self.car;
+    self.txtInput.delegate = self;
 }
-//当scrollview正在滚动的时候就会自动调用这个方法。
-#pragma  mark -监听滚动 就得设置1.代理对象 2.遵守协议 3.实现scrollViewDidScroll方法
--(void) scrollViewDidScroll:(UIScrollView *)scrollView{
-    NSLog(@"scrollViewDidScroll------%s",__func__);
+#pragma mark - 代理方法都是控件名开头的
+-(void) textFieldDidBeginEditing:(UITextField *)textField{
+    NSLog(@"开始编辑");
 }
-#pragma mark -即将开始拖拽
--(void) scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    NSLog(@"scrollViewWillBeginDragging------%s",__func__);
+-(void) textFieldDidEndEditing:(UITextField *)textField{
+    NSLog(@"结束编辑");
 }
-#pragma mark -即将停止拖拽
--(void) scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-    NSLog(@"scrollViewWillEndDragging------%s",__func__);
+-(void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    //退出键盘
+//    [self.txtInput endEditing:YES];
+    //不再成为第一响应者意味着退出键盘-----, 第一响应者可以调出键盘
+//    [self.txtInput resignFirstResponder];
+    [self.view endEditing:YES];  //这个常用
 }
-#pragma mark -已经停止拖拽
--(void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    NSLog(@"scrollViewDidEndDragging------%s",__func__);
-    if(decelerate==NO){
-        NSLog(@"用户已经停止拖拽scrollView,停止滚动");//没有减速
-    }else{
-        //代表有减速
-        NSLog(@"用户已经停止拖拽scrollView,但是scrollView由于惯性会继续滚动,减速 ");
-    }
-}
-#pragma  mark -scrollview减速完毕会调用，停止滚动 但是只通过这个方法监听远远不够，是不严谨的 又可能当scrollView停止拖拽scrollview就已经不滚动了 也就不会出发减速完毕方法
--(void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    NSLog(@"crollview减速完毕会调用，停止滚动-----%s",__func__);
-}
-//控制器View完全显示出来
--(void) viewDidAppear:(BOOL)animated{
-    [super viewDidAppear: animated];
-}
-
 @end
