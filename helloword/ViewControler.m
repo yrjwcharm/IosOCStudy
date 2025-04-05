@@ -33,9 +33,11 @@
     //根据oc ARC法则 一旦对象创建出来那一刻若没有强指针引用它 就会被销毁掉
     scrollView.delegate =self.car;
     //TextField比较特殊 技可以通过addTarget 也可以通过代理
-//    self.txtInput.delegate = self;
-    [self.txtInput addTarget:self action:@selector(beginEditing) forControlEvents:UIControlEventEditingDidBegin];
-    [self.txtInput addTarget:self action:@selector(endEditing) forControlEvents:(UIControlEvents)UIControlEventEditingDidEnd];
+    self.txtInput.delegate = self;
+//    [self.txtInput addTarget:self action:@selector(beginEditing) forControlEvents:UIControlEventEditingDidBegin];
+//    [self.txtInput addTarget:self action:@selector(endEditing) forControlEvents:(UIControlEvents)UIControlEventEditingDidEnd];
+//    [self.txtInput addTarget:self action:@selector(onChangeText:) forControlEvents:UIControlEventEditingChanged];
+    
 }
 #pragma mark - 1.通过代理 代理方法都是控件名开头的
 -(void) textFieldDidBeginEditing:(UITextField *)textField{
@@ -43,6 +45,9 @@
 }
 -(void) textFieldDidEndEditing:(UITextField *)textField{
     NSLog(@"结束编辑");
+}
+-(void) textFieldDidChangeSelection:(UITextField *)textField{
+    NSLog(@"内容改变-----%@",textField.text);
 }
 -(void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     //退出键盘
@@ -57,5 +62,8 @@
 }
 -(void)endEditing{
     NSLog(@"结束编辑----");
+}
+-(void)onChangeText:(UITextField *) textFiled{
+    NSLog(@"内容改变------%@",textFiled.text);
 }
 @end
