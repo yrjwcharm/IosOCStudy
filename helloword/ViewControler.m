@@ -44,6 +44,8 @@
     self.scrollView.pagingEnabled = YES;
     self.pageControl.numberOfPages = self.array.count;
     self.pageControl.enabled =NO;
+#pragma  mark - .m文件成员变量是私有的，你能直接给它赋值吗？  这里就要用到KVC强大之处  私有的公共的都可以赋值
+    
 //    self.pageControl.userInteractionEnabled = NO;
     if(self.array.count==1){
 //        self.pageControl.hidden =YES;//UIView的方法 或者更改alpha值
