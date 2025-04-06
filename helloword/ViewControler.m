@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property(strong,nonatomic) NSArray *array;
+@property(weak,nonatomic) NSTimer *timer; //它已开始时候就可以一直工作，就说明有强指针一直引用着它，所以不会销毁 有人管理它的生命周期了
+//若指针引用的对象，一旦被销毁 就自动会清空 为 nill
 @end
 
 @implementation ViewController
@@ -44,7 +46,7 @@
     self.scrollView.pagingEnabled = YES;
     self.pageControl.numberOfPages = self.array.count;
     self.pageControl.enabled =NO;
-    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
+   self.timer= [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
     
 #pragma  mark - .m文件成员变量是私有的，你能直接给它赋值吗？  这里就要用到KVC强大之处  私有的公共的都可以赋值
     
@@ -75,6 +77,17 @@
 }
 -(void)nextPage{
     NSInteger page = self.pageControl.currentPage + 1;
+    if(page==5){
+        page =0;
+    }
     [self.scrollView setContentOffset:CGPointMake(page*self.scrollView.frame.size.width, 0) animated:YES];
+}
+//当用户开始拖拽的时候，停止定时器
+-(void) scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    [self.timer invalidate];
+    
+}
+-(void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    self.timer= [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
 }
 @end
