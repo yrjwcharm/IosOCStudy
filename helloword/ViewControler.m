@@ -99,7 +99,8 @@
         //返回一个自动执行的定时器对象 userInfo 就是给定时器执行的方法传递参数
         self.timer= [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(nextPage:) userInfo:@"123" repeats:YES];
     //修改timer在runLoop中的默认为NSRunLoopCommonModes模式 ，目的：不管主线程在做什么操作，都会分配一定时间处理定时器
-        [[NSRunLoop mainRunLoop]  addTimer:self.timer forMode:NSRunLoopCommonModes];
+    //默认模式NSDefaultRunLoopMode
+        [[NSRunLoop mainRunLoop]  addTimer:self.timer forMode:NSDefaultRunLoopMode];
 //    }
 }
 -(void) stopTimer{
