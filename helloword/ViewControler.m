@@ -44,6 +44,8 @@
     self.scrollView.pagingEnabled = YES;
     self.pageControl.numberOfPages = self.array.count;
     self.pageControl.enabled =NO;
+    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
+    
 #pragma  mark - .m文件成员变量是私有的，你能直接给它赋值吗？  这里就要用到KVC强大之处  私有的公共的都可以赋值
     
 //    self.pageControl.userInteractionEnabled = NO;
@@ -70,5 +72,9 @@
     //四舍五入 int(小数+0.5)
         int page = self.scrollView.contentOffset.x/scrollView.frame.size.width+.5;
         self.pageControl.currentPage = page;
+}
+-(void)nextPage{
+    NSInteger page = self.pageControl.currentPage + 1;
+    [self.scrollView setContentOffset:CGPointMake(page*self.scrollView.frame.size.width, 0) animated:YES];
 }
 @end
