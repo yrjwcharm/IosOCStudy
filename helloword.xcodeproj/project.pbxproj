@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		599A3F592DA132A00039C939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 599A3F582DA132A00039C939 /* Main.storyboard */; };
 		599A3F5C2DA148CF0039C939 /* XMGCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A3F5B2DA148CF0039C939 /* XMGCar.m */; };
+		599A3F732DA2A1150039C939 /* XMGPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 599A3F722DA2A1150039C939 /* XMGPageView.m */; };
 		59BA0C412D90279700872A01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BA0C402D90279700872A01 /* AppDelegate.m */; };
 		59BA0C442D90279700872A01 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BA0C432D90279700872A01 /* SceneDelegate.m */; };
 		59BA0C4C2D90279900872A01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59BA0C4B2D90279900872A01 /* Assets.xcassets */; };
@@ -22,6 +23,8 @@
 		599A3F582DA132A00039C939 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		599A3F5A2DA148CF0039C939 /* XMGCar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGCar.h; sourceTree = "<group>"; };
 		599A3F5B2DA148CF0039C939 /* XMGCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGCar.m; sourceTree = "<group>"; };
+		599A3F712DA2A1150039C939 /* XMGPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGPageView.h; sourceTree = "<group>"; };
+		599A3F722DA2A1150039C939 /* XMGPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGPageView.m; sourceTree = "<group>"; };
 		59BA0C3C2D90279700872A01 /* helloword.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloword.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BA0C3F2D90279700872A01 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		59BA0C402D90279700872A01 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,6 +83,8 @@
 				59BA0C502D90279900872A01 /* Info.plist */,
 				59FA8A7F2D98376900660530 /* test.plist */,
 				59BA0C512D90279900872A01 /* main.m */,
+				599A3F712DA2A1150039C939 /* XMGPageView.h */,
+				599A3F722DA2A1150039C939 /* XMGPageView.m */,
 			);
 			path = helloword;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 				59BA0C412D90279700872A01 /* AppDelegate.m in Sources */,
 				59BA0C522D90279900872A01 /* main.m in Sources */,
 				59FA8A6E2D9039F900660530 /* ViewControler.m in Sources */,
+				599A3F732DA2A1150039C939 /* XMGPageView.m in Sources */,
 				59BA0C442D90279700872A01 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
