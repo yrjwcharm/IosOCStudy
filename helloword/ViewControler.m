@@ -46,7 +46,7 @@
     self.scrollView.pagingEnabled = YES;
     self.pageControl.numberOfPages = self.array.count;
     self.pageControl.enabled =NO;
-   self.timer= [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
+    [self startTimer];
     
 #pragma  mark - .m文件成员变量是私有的，你能直接给它赋值吗？  这里就要用到KVC强大之处  私有的公共的都可以赋值
     
@@ -75,7 +75,8 @@
         int page = self.scrollView.contentOffset.x/scrollView.frame.size.width+.5;
         self.pageControl.currentPage = page;
 }
--(void)nextPage{
+-(void)nextPage:(NSTimer *)timer{
+    NSLog(@"获取传递的参数————————————%@",timer.userInfo);
     NSInteger page = self.pageControl.currentPage + 1;
     if(page==5){
         page =0;
@@ -88,6 +89,16 @@
     
 }
 -(void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    self.timer= [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
+    [self startTimer];
+}
+-(void) startTimer{
+    if(self.timer==nil){
+        //返回一个自动执行的定时器对象 userInfo 就是给定时器执行的方法传递参数
+        self.timer= [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(nextPage:) userInfo:@"123" repeats:YES];
+    }
+}
+-(void) stopTimer{
+    [self.timer invalidate];
+    self.timer = nil; //非必要
 }
 @end
