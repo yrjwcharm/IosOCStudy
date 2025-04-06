@@ -42,7 +42,15 @@
     }
     self.scrollView.contentSize = CGSizeMake(self.array.count * scrollViewW, 0);
     self.scrollView.pagingEnabled = YES;
-//    self.pageControl.currentPage = 1;
+    self.pageControl.numberOfPages = self.array.count;
+    self.pageControl.enabled =NO;
+//    self.pageControl.userInteractionEnabled = NO;
+    if(self.array.count==1){
+//        self.pageControl.hidden =YES;//UIView的方法 或者更改alpha值
+//        self.pageControl.alpha=0;
+        //单页的时候隐藏
+        self.pageControl.hidesForSinglePage =YES;
+    }
     // 设置内容尺寸为7页
 }
 //-(void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
@@ -57,7 +65,7 @@
 //}
 //#pragma mark - 2、当scrollView页面超过一半时，就变更指示器
 -(void) scrollViewDidScroll:(UIScrollView *)scrollView{
-    //页面超过一半
+    //四舍五入 int(小数+0.5)
         int page = self.scrollView.contentOffset.x/scrollView.frame.size.width+.5;
         self.pageControl.currentPage = page;
 }
