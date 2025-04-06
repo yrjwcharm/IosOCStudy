@@ -33,6 +33,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="pageControl" destination="Eca-ok-HsM" id="SGn-IR-ZFA"/>
                         <outlet property="scrollView" destination="rAb-JX-Ps2" id="QCc-TU-o78"/>
                     </connections>
                 </viewController>

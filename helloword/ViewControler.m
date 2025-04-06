@@ -12,6 +12,7 @@
  代理监听控件的某些行为 代理
  */
 @interface ViewController () <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property(strong,nonatomic) NSArray *array;
 @end
@@ -20,7 +21,7 @@
 - (NSArray *)array {
     if (!_array) {
         // 在原始数组前后各加一个元素实现循环
-        _array = @[@"5.jpg", @"1.jpg", @"2.jpg", @"3.jpg", @"4.jpg", @"5.jpg", @"1.jpg"];
+        _array = @[@"1.jpg", @"2.jpg", @"3.jpg", @"4.jpg", @"5.jpg"];
     }
     return _array;
 }
@@ -39,27 +40,25 @@
         imageView.frame = CGRectMake(i * scrollViewW, 0, scrollViewW, scrollViewH);
         [self.scrollView addSubview:imageView];
     }
-    
-    // 设置内容尺寸为7页
-    self.scrollView.contentSize = CGSizeMake(scrollViewW * 7, 0);
+    self.scrollView.contentSize = CGSizeMake(self.array.count * scrollViewW, 0);
     self.scrollView.pagingEnabled = YES;
-    
-    // 初始定位到第二页（索引1，显示原始第一张图）
-    [self.scrollView setContentOffset:CGPointMake(scrollViewW * 1, 0)];
+//    self.pageControl.currentPage = 1;
+    // 设置内容尺寸为7页
 }
-
-#pragma mark - UIScrollViewDelegate
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    CGFloat pageWidth = scrollView.frame.size.width;
-    NSInteger currentPage = scrollView.contentOffset.x / pageWidth;
-    
-    // 当滚动到第一个克隆页时跳转到真实最后一个页
-    if (currentPage == 0) {
-        [scrollView setContentOffset:CGPointMake(pageWidth * 5, 0) animated:NO];
-    }
-    // 当滚动到最后一个克隆页时跳转到真实第一个页
-    else if (currentPage == self.array.count - 1) {
-        [scrollView setContentOffset:CGPointMake(pageWidth * 1, 0) animated:NO];
-    }
+//-(void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+//    if(decelerate==NO){
+//    }
+//}
+//#pragma mark - 1、当scrollView减速完毕后，才变更指示器
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+//    //计算页码 偏移量的x/scrollView自己的宽度
+//    int page = self.scrollView.contentOffset.x/scrollView.frame.size.width;
+//    self.pageControl.currentPage = page;
+//}
+//#pragma mark - 2、当scrollView页面超过一半时，就变更指示器
+-(void) scrollViewDidScroll:(UIScrollView *)scrollView{
+    //页面超过一半
+        int page = self.scrollView.contentOffset.x/scrollView.frame.size.width+.5;
+        self.pageControl.currentPage = page;
 }
 @end
