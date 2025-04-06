@@ -58,6 +58,7 @@
 }
 -(void) startTimer{
     self.timer =[NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 -(void) stopTimer{
     [self.timer invalidate];
