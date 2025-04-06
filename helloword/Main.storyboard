@@ -16,31 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tdV-ug-VOs">
-                                <rect key="frame" x="76" y="238" width="240" height="128"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAb-JX-Ps2">
+                                <rect key="frame" x="39" y="192" width="300" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="QJS-tt-vtr"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="k4N-0c-gTI"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="gAO-U2-wG2"/>
-                                </connections>
+                                <viewLayoutGuide key="contentLayoutGuide" id="mT4-tJ-eTG"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="HQb-i7-coT"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ik0-zf-OY5">
-                                <rect key="frame" x="91" y="530" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="btnClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TJ2-GD-ZoN"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="button" destination="ik0-zf-OY5" id="fgY-Ms-PWd"/>
-                        <outlet property="scrollView" destination="tdV-ug-VOs" id="qts-Vk-Xuc"/>
+                        <outlet property="scrollView" destination="rAb-JX-Ps2" id="QCc-TU-o78"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
