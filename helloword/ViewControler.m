@@ -93,10 +93,12 @@
 }
 //线程 ----执行任务 程序已启动，系统会默认创建一条线程 这条线程就是主线程 作用: 首先显示刷新UI界面,处理与用户的交互事件
 //主线程 同一时间只能处理一个任务
+//多线程的原理： 1s------->一万个0.0001s 多个任务同时执行是个假象  CPU在多个任务之间来回快速调度造成一个假象
 -(void) startTimer{
 //    if(self.timer==nil){
         //返回一个自动执行的定时器对象 userInfo 就是给定时器执行的方法传递参数
         self.timer= [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(nextPage:) userInfo:@"123" repeats:YES];
+    //修改timer在runLoop中的默认为NSRunLoopCommonModes模式 ，目的：不管主线程在做什么操作，都会分配一定时间处理定时器
         [[NSRunLoop mainRunLoop]  addTimer:self.timer forMode:NSRunLoopCommonModes];
 //    }
 }
