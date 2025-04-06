@@ -96,9 +96,10 @@
 //多线程的原理： 1s------->一万个0.0001s 多个任务同时执行是个假象  CPU在多个任务之间来回快速调度造成一个假象
 -(void) startTimer{
 //    if(self.timer==nil){
-        //返回一个自动执行的定时器对象 userInfo 就是给定时器执行的方法传递参数
+        //返回一个自动执行的定时器对象 userInfo 就是给定时器执行的方法传递参数 默认他就会添加到run loop中 导致run loop会对它有一个强引用
         self.timer= [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(nextPage:) userInfo:@"123" repeats:YES];
-    //修改timer在runLoop中的默认为NSRunLoopCommonModes模式 ，目的：不管主线程在做什么操作，都会分配一定时间处理定时器
+    //修改timer在runLoop中的默认为NSRunLoopCommonModes(公用)多种模式的结合体 同一时间只能执行一个任务 ，目的：不管主线程在做什么操作，都会分配一定时间处理定时器
+    //可以分配一定的时间执行其他任务
     //默认模式NSDefaultRunLoopMode
         [[NSRunLoop mainRunLoop]  addTimer:self.timer forMode:NSDefaultRunLoopMode];
 //    }
