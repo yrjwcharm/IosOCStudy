@@ -10,7 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XMGPageView : UIView
-
++(instancetype) pageView;
+/**图片数据**/
+@property(nonatomic,strong) NSArray *images;
 @end
 
 NS_ASSUME_NONNULL_END
