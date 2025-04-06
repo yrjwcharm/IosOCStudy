@@ -91,11 +91,14 @@
 -(void) scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     [self startTimer];
 }
+//线程 ----执行任务 程序已启动，系统会默认创建一条线程 这条线程就是主线程 作用: 首先显示刷新UI界面,处理与用户的交互事件
+//主线程 同一时间只能处理一个任务
 -(void) startTimer{
-    if(self.timer==nil){
+//    if(self.timer==nil){
         //返回一个自动执行的定时器对象 userInfo 就是给定时器执行的方法传递参数
         self.timer= [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(nextPage:) userInfo:@"123" repeats:YES];
-    }
+        [[NSRunLoop mainRunLoop]  addTimer:self.timer forMode:NSRunLoopCommonModes];
+//    }
 }
 -(void) stopTimer{
     [self.timer invalidate];
