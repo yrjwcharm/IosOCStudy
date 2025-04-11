@@ -27,6 +27,7 @@
     self.scrollView.delegate = self;
     [self startTimer];
 }
+//当一个控件frame发生变化的时候 她就会调用这个方法 调整尺寸和位置
 -(void) layoutSubviews{
     [super layoutSubviews];
 }
@@ -41,6 +42,12 @@
     CGFloat scrollViewW = self.scrollView.frame.size.width;
     CGFloat scrollViewH = self.scrollView.frame.size.height;
     
+    #pragma mark -//移除之前添加的 //这个逻辑是有问题的 影响开发原则 要保证数组数量是不变的
+//    for(UIImageView *imageView in self.scrollView.subviews){
+//        [imageView removeFromSuperview];
+//    }
+    #pragma mark-让subviews这个数组每个对象都执行 removeFromSuperview方法
+    [self.scrollView.subviews  makeObjectsPerformSelector:@selector(removeFromSuperview)];
     // 添加所有图片视图
     for (int i = 0; i < images.count; i++) {
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:images[i]]];

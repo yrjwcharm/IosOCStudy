@@ -16,6 +16,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     XMGPageView *pageView =[XMGPageView pageView];
+//    [pageView setBackgroundColor:[UIColor redColor]];
     pageView.center = self.view.center;
     pageView.images =@[@"1.jpg",@"2.jpg",@"3.jpg",@"4.jpg",@"5.jpg"];
     [self.view addSubview:pageView];
