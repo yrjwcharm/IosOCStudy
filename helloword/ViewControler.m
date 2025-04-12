@@ -8,11 +8,16 @@
 #import "ViewControler.h"
 
 @interface MainViewControler ()
+@property (weak, nonatomic) IBOutlet UILabel *label;
 @end
 
 @implementation MainViewControler
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    self.label.text =@"sss";
+    
 }
 @end
