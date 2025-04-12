@@ -16,26 +16,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelsdddddddddddddddddddddddddddddddd" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="IlN-qZ-55I">
-                                <rect key="frame" x="62" y="390.5" width="290.5" height="115"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ynv-0G-daz">
+                                <rect key="frame" x="20" y="68" width="100" height="100"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="hm1-jl-uVg"/>
+                                    <constraint firstAttribute="height" constant="100" id="LmH-Vw-wOl"/>
+                                    <constraint firstAttribute="width" constant="100" id="c26-ih-F11"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WGF-K0-77Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="IlN-qZ-55I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FmQ-KC-0HK"/>
-                            <constraint firstItem="IlN-qZ-55I" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bwq-PC-k0U"/>
+                            <constraint firstItem="Ynv-0G-daz" firstAttribute="leading" secondItem="WGF-K0-77Q" secondAttribute="leading" constant="20" id="HqE-ew-38c"/>
+                            <constraint firstItem="Ynv-0G-daz" firstAttribute="top" secondItem="WGF-K0-77Q" secondAttribute="top" constant="20" id="S4G-PP-arF"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="label" destination="IlN-qZ-55I" id="s9U-jy-KwU"/>
+                        <outlet property="redW" destination="c26-ih-F11" id="s4o-bn-bEI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
