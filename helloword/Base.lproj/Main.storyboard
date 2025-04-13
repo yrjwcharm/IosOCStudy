@@ -15,26 +15,9 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="控制器View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ynv-0G-daz">
-                                <rect key="frame" x="20" y="68" width="100" height="100"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="LmH-Vw-wOl"/>
-                                    <constraint firstAttribute="width" constant="100" id="c26-ih-F11"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WGF-K0-77Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Ynv-0G-daz" firstAttribute="leading" secondItem="WGF-K0-77Q" secondAttribute="leading" constant="20" id="HqE-ew-38c"/>
-                            <constraint firstItem="Ynv-0G-daz" firstAttribute="top" secondItem="WGF-K0-77Q" secondAttribute="top" constant="20" id="S4G-PP-arF"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="redW" destination="c26-ih-F11" id="s4o-bn-bEI"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,9 +27,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
