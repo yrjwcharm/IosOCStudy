@@ -6,6 +6,12 @@
 //
 
 #import "ViewControler.h"
+//define this constant if you want to use Masonry without the 'mas_' prefix
+#define MAS_SHORTHAND
+
+//define this constant if you want to enable auto-boxing for default syntax
+#define MAS_SHORTHAND_GLOBALS
+
 #import "Masonry.h"
 @interface MainViewControler ()
 @end
@@ -20,20 +26,34 @@
     UIView *redView =[[UIView alloc] init];
     redView.backgroundColor =[UIColor redColor];
     [self.view addSubview:redView];
-    [blueView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.view.mas_left).offset(30);
-        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-30);
-        make.right.mas_equalTo(redView.mas_left).offset(-30);
-        make.width.mas_equalTo(redView.mas_width);
-        make.height.mas_equalTo(50);
+    //添加新的约束
+    [blueView makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.left).offset(30);
+        make.bottom.equalTo(self.view.bottom).offset(-30);
+        make.right.equalTo(redView.left).offset(-30);
+        make.width.equalTo(redView.width);
+//        make.height.equalTo(50);
     }];
-    [redView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self.view.mas_right).offset(-30);
-        make.top.mas_equalTo(blueView.mas_top);
-        make.bottom.mas_equalTo(blueView.mas_bottom);
+    //添加新的约束
+    [redView makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view.right).width.offset(-30);
+        make.top.equalTo(blueView.top);
+        make.bottom.equalTo(blueView.bottom);
 
     }];
-  
+    //正常写法是不对的
+//    [blueView makeConstraints:^(MASConstraintMaker *make) {
+//        make.height.equalTo(80);
+//    }];
+    //之前没有约束 就会添加约束
+    [blueView updateConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(80);
+    }];
+    //删除之前所有的约束，添加新的约束
+//    [blueView remakeConstraints:^(MASConstraintMaker *make) {
+//        
+//    }];
+  //with/and
 }
 -(void)center{
     UIView *redView =[[UIView alloc] init];
