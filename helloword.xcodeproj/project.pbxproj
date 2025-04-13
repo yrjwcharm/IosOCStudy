@@ -13,6 +13,9 @@
 		59BA0C4C2D90279900872A01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59BA0C4B2D90279900872A01 /* Assets.xcassets */; };
 		59BA0C4F2D90279900872A01 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 59BA0C4E2D90279900872A01 /* Base */; };
 		59BA0C522D90279900872A01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BA0C512D90279900872A01 /* main.m */; };
+		59E12DFE2DABAC8B0057A6B8 /* XMGCarGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E12DFD2DABAC8B0057A6B8 /* XMGCarGroup.m */; };
+		59E12E012DABAED20057A6B8 /* XMGCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E12E002DABAED20057A6B8 /* XMGCar.m */; };
+		59E12E032DABB1F70057A6B8 /* Cars.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59E12E022DABB1F70057A6B8 /* Cars.plist */; };
 		59FA8A6E2D9039F900660530 /* ViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FA8A6D2D9039F900660530 /* ViewControler.m */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,11 @@
 		59BA0C4E2D90279900872A01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59BA0C502D90279900872A01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59BA0C512D90279900872A01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		59E12DFC2DABAC8B0057A6B8 /* XMGCarGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGCarGroup.h; sourceTree = "<group>"; };
+		59E12DFD2DABAC8B0057A6B8 /* XMGCarGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGCarGroup.m; sourceTree = "<group>"; };
+		59E12DFF2DABAED20057A6B8 /* XMGCar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGCar.h; sourceTree = "<group>"; };
+		59E12E002DABAED20057A6B8 /* XMGCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGCar.m; sourceTree = "<group>"; };
+		59E12E022DABB1F70057A6B8 /* Cars.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Cars.plist; sourceTree = "<group>"; };
 		59FA8A6C2D9039F900660530 /* ViewControler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControler.h; sourceTree = "<group>"; };
 		59FA8A6D2D9039F900660530 /* ViewControler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +80,11 @@
 				59BA0C4D2D90279900872A01 /* LaunchScreen.storyboard */,
 				59BA0C502D90279900872A01 /* Info.plist */,
 				59BA0C512D90279900872A01 /* main.m */,
+				59E12DFC2DABAC8B0057A6B8 /* XMGCarGroup.h */,
+				59E12DFD2DABAC8B0057A6B8 /* XMGCarGroup.m */,
+				59E12DFF2DABAED20057A6B8 /* XMGCar.h */,
+				59E12E002DABAED20057A6B8 /* XMGCar.m */,
+				59E12E022DABB1F70057A6B8 /* Cars.plist */,
 			);
 			path = helloword;
 			sourceTree = "<group>";
@@ -134,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59BA0C4C2D90279900872A01 /* Assets.xcassets in Resources */,
+				59E12E032DABB1F70057A6B8 /* Cars.plist in Resources */,
 				59BA0C4F2D90279900872A01 /* Base in Resources */,
 				59BA0C4A2D90279700872A01 /* Base in Resources */,
 			);
@@ -146,8 +160,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59E12DFE2DABAC8B0057A6B8 /* XMGCarGroup.m in Sources */,
 				59BA0C412D90279700872A01 /* AppDelegate.m in Sources */,
 				59BA0C522D90279900872A01 /* main.m in Sources */,
+				59E12E012DABAED20057A6B8 /* XMGCar.m in Sources */,
 				59FA8A6E2D9039F900660530 /* ViewControler.m in Sources */,
 				59BA0C442D90279700872A01 /* SceneDelegate.m in Sources */,
 			);
