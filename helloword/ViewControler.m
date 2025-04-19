@@ -15,34 +15,12 @@ NSString *ID =@"cycler";
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.tableView.rowHeight = 100;
+    self.tableView.sectionIndexColor=[UIColor redColor];
+    self.tableView.sectionIndexBackgroundColor=[UIColor orangeColor];
     [self.tableView registerClass:[XMGTableViewCell class] forCellReuseIdentifier:ID];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 7;
-}
-//隐藏状态栏
-- (BOOL)prefersStatusBarHidden{
-    return  NO;
-}
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
-}
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    if(section==0){
-        return @"A";
-    }else if(section==1){
-        return @"B";
-    }else if(section==2){
-        return @"C";
-    }else if(section==3){
-        return @"D";
-    }else if(section==4){
-        return @"E";
-    }else if(section==5){
-        return @"F";
-    }else{
-        return @"G";
-    }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     XMGTableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:ID];
