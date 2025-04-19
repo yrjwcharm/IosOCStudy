@@ -60,4 +60,7 @@
 
     return cell;
 }
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
 @end
