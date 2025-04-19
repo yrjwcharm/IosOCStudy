@@ -12,12 +12,16 @@
 @end
 
 @implementation XMGTableViewController
+ NSString *reuseId  =@"recycle"; //静态局部变量 特点 改变的是他的生命周期 ，不改变作用域规则 自始至终只分配一块内存空间 ，不改变作用域
+
 - (void)viewDidLoad{
     [super viewDidLoad];
     //self.view//self.tableView
 //    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     //小技巧
 //    self.tableView.tableFooterView = [[UIView alloc] init];
+    //根据ID 这个标识 注册对应的CELL类型 为UITableViewCell
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseId];
     self.tableView.rowHeight =100;
 }
 
@@ -30,9 +34,6 @@
 //每当一个cell进入视野范围内就会调用一次
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
  #pragma  -mark  当初用户【一开始】已经看到的cell 离开屏幕的cell------- 系统会自动把cell放到缓存池中
-    static NSString *reuseId  =@"recycle"; //静态局部变量 特点 改变的是他的生命周期 ，不改变作用域规则 自始至终只分配一块内存空间 ，不改变作用域
-    //根据ID 这个标识 注册对应的CELL类型 为UITableViewCell
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:reuseId];
     //1、 去缓存池中取是否有可循环利用的Cell
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseId];
     
