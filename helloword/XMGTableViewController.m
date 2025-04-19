@@ -37,8 +37,14 @@
     if(cell==nil){
         cell =[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];
         //所有统一设置的Cell样式
-        cell.backgroundColor =[UIColor redColor];
+//        cell.backgroundColor =[UIColor redColor];
         
+    }
+    //不一样的设置
+    if(indexPath.row %2 ==0){
+        cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
+    }else{
+        cell.accessoryType =UITableViewCellAccessoryNone;
     }
     //3.设置数据
     cell.textLabel.text =[NSString stringWithFormat:@"第%ld行数据",indexPath.row];
