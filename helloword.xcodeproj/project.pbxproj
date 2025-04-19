@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		597FC97C2DB2AC3400D3DAA3 /* XMGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 597FC97B2DB2AC3400D3DAA3 /* XMGTableViewController.m */; };
+		597FC97F2DB3919900D3DAA3 /* XMGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 597FC97E2DB3919900D3DAA3 /* XMGTableViewCell.m */; };
 		59BA0C412D90279700872A01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BA0C402D90279700872A01 /* AppDelegate.m */; };
 		59BA0C442D90279700872A01 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BA0C432D90279700872A01 /* SceneDelegate.m */; };
 		59BA0C4A2D90279700872A01 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 59BA0C492D90279700872A01 /* Base */; };
@@ -18,8 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		597FC97A2DB2AC3400D3DAA3 /* XMGTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTableViewController.h; sourceTree = "<group>"; };
-		597FC97B2DB2AC3400D3DAA3 /* XMGTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTableViewController.m; sourceTree = "<group>"; };
+		597FC97D2DB3919900D3DAA3 /* XMGTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTableViewCell.h; sourceTree = "<group>"; };
+		597FC97E2DB3919900D3DAA3 /* XMGTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTableViewCell.m; sourceTree = "<group>"; };
 		59BA0C3C2D90279700872A01 /* helloword.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloword.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BA0C3F2D90279700872A01 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		59BA0C402D90279700872A01 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -75,8 +75,8 @@
 				59BA0C4D2D90279900872A01 /* LaunchScreen.storyboard */,
 				59BA0C502D90279900872A01 /* Info.plist */,
 				59BA0C512D90279900872A01 /* main.m */,
-				597FC97A2DB2AC3400D3DAA3 /* XMGTableViewController.h */,
-				597FC97B2DB2AC3400D3DAA3 /* XMGTableViewController.m */,
+				597FC97D2DB3919900D3DAA3 /* XMGTableViewCell.h */,
+				597FC97E2DB3919900D3DAA3 /* XMGTableViewCell.m */,
 			);
 			path = helloword;
 			sourceTree = "<group>";
@@ -151,10 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				597FC97F2DB3919900D3DAA3 /* XMGTableViewCell.m in Sources */,
 				59BA0C412D90279700872A01 /* AppDelegate.m in Sources */,
 				59BA0C522D90279900872A01 /* main.m in Sources */,
 				59FA8A6E2D9039F900660530 /* ViewControler.m in Sources */,
-				597FC97C2DB2AC3400D3DAA3 /* XMGTableViewController.m in Sources */,
 				59BA0C442D90279700872A01 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
