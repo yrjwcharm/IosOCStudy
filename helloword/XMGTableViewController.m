@@ -40,13 +40,13 @@
 //        cell.backgroundColor =[UIColor redColor];
         
     }
-    //不一样的设置 有if就有else
+    //3.设置数据
+    //每一个CELL不一样的设置就统一放到外边 tips:有if就有else
     if(indexPath.row %2 ==0){
         cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
     }else{
         cell.accessoryType =UITableViewCellAccessoryNone;
     } //有可能是从偶数行/奇数行循环利用过来的
-    //3.设置数据
     cell.textLabel.text =[NSString stringWithFormat:@"第%ld行数据",indexPath.row];
     NSLog(@"%p--%zd",cell,indexPath.row);
 //    0x10ca14b40--0
