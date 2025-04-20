@@ -25,9 +25,11 @@
 		59BA0C4F2D90279900872A01 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 59BA0C4E2D90279900872A01 /* Base */; };
 		59BA0C522D90279900872A01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BA0C512D90279900872A01 /* main.m */; };
 		59FA8A6E2D9039F900660530 /* ViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FA8A6D2D9039F900660530 /* ViewControler.m */; };
+		7D61426B60EBAB555F3D2E30 /* Pods_helloword.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D95DDD06AF7D780E01E7DAC /* Pods_helloword.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4BF3FB7472D78EB6BD117E93 /* Pods-helloword.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helloword.debug.xcconfig"; path = "Target Support Files/Pods-helloword/Pods-helloword.debug.xcconfig"; sourceTree = "<group>"; };
 		597FC97D2DB3919900D3DAA3 /* XMGTgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTgCell.h; sourceTree = "<group>"; };
 		597FC97E2DB3919900D3DAA3 /* XMGTgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTgCell.m; sourceTree = "<group>"; };
 		597FC9842DB4036F00D3DAA3 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
@@ -67,6 +69,8 @@
 		59BA0C512D90279900872A01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59FA8A6C2D9039F900660530 /* ViewControler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControler.h; sourceTree = "<group>"; };
 		59FA8A6D2D9039F900660530 /* ViewControler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControler.m; sourceTree = "<group>"; };
+		6D95DDD06AF7D780E01E7DAC /* Pods_helloword.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_helloword.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E7526353CA7FEEBD65B1DDE /* Pods-helloword.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helloword.release.xcconfig"; path = "Target Support Files/Pods-helloword/Pods-helloword.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D61426B60EBAB555F3D2E30 /* Pods_helloword.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +122,8 @@
 			children = (
 				59BA0C3E2D90279700872A01 /* helloword */,
 				59BA0C3D2D90279700872A01 /* Products */,
+				5F2A999E871E64CBBE82FE10 /* Pods */,
+				A6383380B002820002F40FDC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +156,23 @@
 			path = helloword;
 			sourceTree = "<group>";
 		};
+		5F2A999E871E64CBBE82FE10 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4BF3FB7472D78EB6BD117E93 /* Pods-helloword.debug.xcconfig */,
+				8E7526353CA7FEEBD65B1DDE /* Pods-helloword.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A6383380B002820002F40FDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D95DDD06AF7D780E01E7DAC /* Pods_helloword.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59BA0C552D90279900872A01 /* Build configuration list for PBXNativeTarget "helloword" */;
 			buildPhases = (
+				6584C8D9E90B9BA6640FF174 /* [CP] Check Pods Manifest.lock */,
 				59BA0C382D90279700872A01 /* Sources */,
 				59BA0C392D90279700872A01 /* Frameworks */,
 				59BA0C3A2D90279700872A01 /* Resources */,
+				BB460D4B58F74E70AF1F5867 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,6 +239,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6584C8D9E90B9BA6640FF174 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-helloword-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB460D4B58F74E70AF1F5867 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-helloword/Pods-helloword-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-helloword/Pods-helloword-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-helloword/Pods-helloword-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		59BA0C382D90279700872A01 /* Sources */ = {
@@ -377,6 +445,7 @@
 		};
 		59BA0C562D90279900872A01 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BF3FB7472D78EB6BD117E93 /* Pods-helloword.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -384,6 +453,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G2XW5DZ226;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = helloword/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -405,6 +475,7 @@
 		};
 		59BA0C572D90279900872A01 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E7526353CA7FEEBD65B1DDE /* Pods-helloword.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -412,6 +483,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G2XW5DZ226;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = helloword/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
