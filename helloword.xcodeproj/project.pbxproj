@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		597FC97F2DB3919900D3DAA3 /* XMGTgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 597FC97E2DB3919900D3DAA3 /* XMGTgCell.m */; };
 		597FC99F2DB4036F00D3DAA3 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 597FC9852DB4036F00D3DAA3 /* MASCompositeConstraint.m */; };
 		597FC9A02DB4036F00D3DAA3 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 597FC9872DB4036F00D3DAA3 /* MASConstraint.m */; };
 		597FC9A12DB4036F00D3DAA3 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 597FC98A2DB4036F00D3DAA3 /* MASConstraintMaker.m */; };
@@ -18,6 +17,8 @@
 		597FC9A62DB4036F00D3DAA3 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 597FC9972DB4036F00D3DAA3 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		597FC9A72DB4036F00D3DAA3 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 597FC9992DB4036F00D3DAA3 /* View+MASAdditions.m */; };
 		597FC9A82DB4036F00D3DAA3 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 597FC99C2DB4036F00D3DAA3 /* ViewController+MASAdditions.m */; };
+		597FC9AC2DB4C87200D3DAA3 /* XMGTgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 597FC9AB2DB4C87200D3DAA3 /* XMGTgCell.xib */; };
+		597FC9AF2DB4CB6300D3DAA3 /* XMGTgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 597FC9AE2DB4CB6300D3DAA3 /* XMGTgCell.m */; };
 		59BA0C412D90279700872A01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BA0C402D90279700872A01 /* AppDelegate.m */; };
 		59BA0C442D90279700872A01 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BA0C432D90279700872A01 /* SceneDelegate.m */; };
 		59BA0C4A2D90279700872A01 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 59BA0C492D90279700872A01 /* Base */; };
@@ -30,8 +31,6 @@
 
 /* Begin PBXFileReference section */
 		4BF3FB7472D78EB6BD117E93 /* Pods-helloword.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helloword.debug.xcconfig"; path = "Target Support Files/Pods-helloword/Pods-helloword.debug.xcconfig"; sourceTree = "<group>"; };
-		597FC97D2DB3919900D3DAA3 /* XMGTgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTgCell.h; sourceTree = "<group>"; };
-		597FC97E2DB3919900D3DAA3 /* XMGTgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTgCell.m; sourceTree = "<group>"; };
 		597FC9842DB4036F00D3DAA3 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		597FC9852DB4036F00D3DAA3 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		597FC9862DB4036F00D3DAA3 /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
@@ -57,6 +56,9 @@
 		597FC99A2DB4036F00D3DAA3 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		597FC99B2DB4036F00D3DAA3 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		597FC99C2DB4036F00D3DAA3 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		597FC9AB2DB4C87200D3DAA3 /* XMGTgCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XMGTgCell.xib; sourceTree = "<group>"; };
+		597FC9AD2DB4CB6300D3DAA3 /* XMGTgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGTgCell.h; sourceTree = "<group>"; };
+		597FC9AE2DB4CB6300D3DAA3 /* XMGTgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGTgCell.m; sourceTree = "<group>"; };
 		59BA0C3C2D90279700872A01 /* helloword.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloword.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BA0C3F2D90279700872A01 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		59BA0C402D90279700872A01 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -150,8 +152,9 @@
 				59BA0C4D2D90279900872A01 /* LaunchScreen.storyboard */,
 				59BA0C502D90279900872A01 /* Info.plist */,
 				59BA0C512D90279900872A01 /* main.m */,
-				597FC97D2DB3919900D3DAA3 /* XMGTgCell.h */,
-				597FC97E2DB3919900D3DAA3 /* XMGTgCell.m */,
+				597FC9AB2DB4C87200D3DAA3 /* XMGTgCell.xib */,
+				597FC9AD2DB4CB6300D3DAA3 /* XMGTgCell.h */,
+				597FC9AE2DB4CB6300D3DAA3 /* XMGTgCell.m */,
 			);
 			path = helloword;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59BA0C4C2D90279900872A01 /* Assets.xcassets in Resources */,
+				597FC9AC2DB4C87200D3DAA3 /* XMGTgCell.xib in Resources */,
 				59BA0C4F2D90279900872A01 /* Base in Resources */,
 				59BA0C4A2D90279700872A01 /* Base in Resources */,
 			);
@@ -288,7 +292,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				597FC9A62DB4036F00D3DAA3 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
-				597FC97F2DB3919900D3DAA3 /* XMGTgCell.m in Sources */,
 				597FC9A42DB4036F00D3DAA3 /* MASViewConstraint.m in Sources */,
 				59BA0C412D90279700872A01 /* AppDelegate.m in Sources */,
 				59BA0C522D90279900872A01 /* main.m in Sources */,
@@ -302,6 +305,7 @@
 				597FC9A02DB4036F00D3DAA3 /* MASConstraint.m in Sources */,
 				597FC9A22DB4036F00D3DAA3 /* MASLayoutConstraint.m in Sources */,
 				59BA0C442D90279700872A01 /* SceneDelegate.m in Sources */,
+				597FC9AF2DB4CB6300D3DAA3 /* XMGTgCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

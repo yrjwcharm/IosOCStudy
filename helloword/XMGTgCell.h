@@ -1,8 +1,8 @@
 //
-//  XMGTableViewCell.h
+//  XMGTgCell.h
 //  helloword
 //
-//  Created by 闫瑞锋 on 2025/4/19.
+//  Created by 闫瑞锋 on 2025/4/20.
 //
 
 #import <UIKit/UIKit.h>
