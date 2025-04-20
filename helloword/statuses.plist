@@ -8,9 +8,9 @@
 		<key>icon</key>
 		<string>1-beer.png</string>
 		<key>name</key>
-		<string>标题1</string>
+		<string>日出东方</string>
 		<key>text</key>
-		<string>内容</string>
+		<string>明月几时有，把酒问青天，不知天上宫阙，今夕是何年，我欲乘风归去，又恐琼楼玉宇</string>
 		<key>vip</key>
 		<true/>
 	</dict>
@@ -20,11 +20,11 @@
 		<key>icon</key>
 		<string>2-milk.png</string>
 		<key>name</key>
-		<string>标题1</string>
+		<string>秋风扫落叶</string>
 		<key>text</key>
 		<string>内容</string>
 		<key>vip</key>
-		<true/>
+		<false/>
 	</dict>
 </array>
 </plist>

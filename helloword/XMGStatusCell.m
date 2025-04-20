@@ -20,11 +20,10 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if(self=[super initWithStyle:style reuseIdentifier:reuseIdentifier]){
         UIImageView *imageView =[[UIImageView alloc] init];
-        imageView.backgroundColor=[UIColor redColor];
         [self.contentView addSubview:imageView];
         self.iconImageView = imageView;
         UILabel *nameLabel =[[UILabel alloc] init];
-        nameLabel.backgroundColor=[UIColor greenColor];
+        nameLabel.font =[UIFont systemFontOfSize:17.0];
         [self.contentView addSubview:nameLabel];
         self.nameLabel = nameLabel;
         UILabel *textLabel =[[UILabel alloc] init];
@@ -33,7 +32,11 @@
         self.text_label = textLabel;
         UIImageView *vipImageView =[[UIImageView alloc] init];
         vipImageView.image=[UIImage imageNamed:@"8-cake.png"];
-        vipImageView.backgroundColor=[UIColor yellowColor];
+//        vipImageView.backgroundColor=[UIColor blueColor];
+        vipImageView.contentMode = UIViewContentModeScaleAspectFit; // 修改1：等比例缩放
+        vipImageView.clipsToBounds = YES; // 修改2：启用裁剪
+        //然设置了contentMode为UIViewContentModeCenter，但若图片尺寸大于UIImageView的尺寸，不进行缩放或裁剪会导致显示问题。vipImageView.contentMode =UIViewContentModeCenter;
+        
         [self.contentView addSubview:vipImageView];
         self.vipImageView = vipImageView;
         UIImageView *pictureImageView =[[UIImageView alloc] init];
@@ -51,6 +54,16 @@
     CGFloat iconY = space;
     CGFloat iconWH =30;
     self.iconImageView.frame =CGRectMake(iconX, iconY, iconWH, iconWH);
+    CGFloat nameX =CGRectGetMaxX(self.iconImageView.frame)+space;
+    #pragma mark - 文本宽度需要手动计算
+    NSDictionary<NSAttributedStringKey,id> *nameAttr=@{NSFontAttributeName:[UIFont systemFontOfSize:17.0]};
+    CGSize nameSize = [self.status.name sizeWithAttributes:nameAttr];
+    self.nameLabel.frame =CGRectMake(nameX, space,nameSize.width,nameSize.height);
+//    CGFloat vipY = space+ (nameSize.height-14)*.5; 不需要手动计算
+//    if(self.status.isVip){
+        self.vipImageView.frame =CGRectMake(CGRectGetMaxX(self.nameLabel.frame)+10, space, 14, nameSize.height);
+
+//    }
 }
 //给模型传递数据 重写模型的set方法
 - (void)setStatus:(XMGStatus *)status{
@@ -60,9 +73,11 @@
     self.text_label.text = status.text;
     //考虑到循环利用 有IF 就有Else
     if(status.isVip){
-        self.imageView.hidden =NO;
+        self.vipImageView.hidden =NO;
+        self.nameLabel.textColor=[UIColor orangeColor];
     }else{
-        self.imageView.hidden =YES;
+        self.vipImageView.hidden =YES;
+        self.nameLabel.textColor=[UIColor blackColor];
     }
     if([status.picture length]>0){
         self.pictureImageView.hidden =NO;
