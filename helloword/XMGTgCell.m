@@ -25,5 +25,9 @@
 
     // Configure the view for the selected state
 }
+- (void)setTg:(XMGTg *)tg{
+    _tg = tg;
+    
+}
 
 @end

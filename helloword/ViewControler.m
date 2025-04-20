@@ -20,6 +20,8 @@ NSString *ID =@"cycler";
 //    [self.tableView registerClass:[XMGTgCell class] forCellReuseIdentifier:ID];
     //通过XIB
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([XMGTgCell class]) bundle:nil] forCellReuseIdentifier:ID];
+    //使用StoryBoard方式的话 不需要注册 他会给你的重用标识 如果没有找到的话 他会自动去Stoyrboard里边去找，但是storyboard里边必须设置重用标识
+#pragma  mark -自定义分割线 更改约束不会有小数，直接更改透明度 
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 20;
