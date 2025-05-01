@@ -35,8 +35,8 @@
     cell.wine = self.wineArray[indexPath.row];
     return cell;
 }
+#pragma mark -添加数据
 - (IBAction)add:(UIButton *)sender {
-    NSLog(@"点击了吗");
     XMGWine *win =[[XMGWine alloc] init];
     win.name =@"新品上市";
     win.image=@"head_course_icon.png";
@@ -45,9 +45,17 @@
     [self.tableView reloadData];
     
 }
+#pragma mark -更新数据
 - (IBAction)update:(UIButton *)sender {
+  XMGWine *wine=  self.wineArray[0];
+    wine.price =@20;
+    [self.tableView reloadData];
 }
+#pragma mark -删除数据
+
 - (IBAction)delete:(UIButton *)sender {
+    [self.wineArray removeObjectAtIndex:0];
+    [self.tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
