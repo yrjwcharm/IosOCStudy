@@ -43,7 +43,9 @@
     win.price = @30;
     [self.wineArray insertObject:win atIndex:0];
     //全局刷新
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     
 }
 #pragma mark -更新数据
