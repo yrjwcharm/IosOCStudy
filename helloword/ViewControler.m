@@ -42,6 +42,7 @@
     win.image=@"head_course_icon.png";
     win.price = @30;
     [self.wineArray insertObject:win atIndex:0];
+    //全局刷新
     [self.tableView reloadData];
     
 }
@@ -49,12 +50,17 @@
 - (IBAction)update:(UIButton *)sender {
   XMGWine *wine=  self.wineArray[0];
     wine.price =@20;
-    [self.tableView reloadData];
+    //全局刷新
+//    [self.tableView reloadData];
+    //局部刷新
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 #pragma mark -删除数据
 
 - (IBAction)delete:(UIButton *)sender {
     [self.wineArray removeObjectAtIndex:0];
+    //全局刷新
     [self.tableView reloadData];
 }
 
