@@ -9,6 +9,7 @@
 #import "XMGWineCell.h"
 #import "MJExtension.h"
 #import "XMGWine.h"
+#import "XMGCircleButton.h"
 @interface ViewControler () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) NSMutableArray *wineArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -25,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.rowHeight = 80;
+//    访问了一块已经被系统回收的内存空间，会出现野指针错误
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *ID = @"wine";

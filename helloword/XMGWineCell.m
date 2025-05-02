@@ -7,12 +7,16 @@
 
 #import "XMGWineCell.h"
 #import "XMGWine.h"
+#import "XMGCircleButton.h"
 @interface XMGWineCell()
 //@property (weak, nonatomic) IBOutlet UIButton *btnDecrease;
 //@property (weak, nonatomic) IBOutlet UIButton *btnAdd;
 @property (weak, nonatomic) IBOutlet UIImageView *wineImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *buyCountLabel;
+@property (weak, nonatomic) IBOutlet XMGCircleButton *btnMinus;
+@property (weak, nonatomic) IBOutlet XMGCircleButton *btnPlus;
 
 @end
 @implementation XMGWineCell
@@ -33,6 +37,25 @@
     _wine =wine;
     self.wineImage.image=[UIImage imageNamed:wine.image];
     self.nameLabel.text=wine.name;
-    self.priceLabel.text = [NSString stringWithFormat:@"%@",wine.price];
+    self.priceLabel.text = [NSString stringWithFormat:@"¥%@",wine.price];
+    self.buyCountLabel.text =[NSString stringWithFormat:@"%d",wine.buyCount];
+    //根据count决定按钮是否可以点击
+    self.btnMinus.enabled = self.wine.buyCount>0;
+}
+- (IBAction)btnPlus:(XMGCircleButton *)sender {
+    self.btnMinus.enabled =YES;
+    self.wine.buyCount++;
+//    [self setWine:self.wine];
+//    self.wine = self.wine;
+    self.buyCountLabel.text =[NSString stringWithFormat:@"%d",self.wine.buyCount];
+    
+
+}
+- (IBAction)btnMinus:(XMGCircleButton *)sender {
+        self.wine.buyCount--;
+        self.buyCountLabel.text =[NSString stringWithFormat:@"%d",self.wine.buyCount];
+    if(self.wine.buyCount==0){
+        self.btnMinus.enabled=NO;
+    }
 }
 @end

@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSNumber *price;
 @property (nonatomic, copy) NSString *image;
-@property(nonatomic,assign,getter=isChecked) BOOL checked;
+//@property(nonatomic,assign,getter=isChecked) BOOL checked;
+@property(nonatomic,assign) int buyCount;
 @end
 
 NS_ASSUME_NONNULL_END
