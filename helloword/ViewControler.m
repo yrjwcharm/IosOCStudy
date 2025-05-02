@@ -10,7 +10,7 @@
 #import "MJExtension.h"
 #import "XMGWine.h"
 @interface ViewControler () <UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UIButton *del;
+@property (weak, nonatomic) IBOutlet UIButton *delButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *wineArray;
 @end
@@ -28,6 +28,7 @@
     [super viewDidLoad];
     //告诉tabview在编辑模式下可以进行多选操作
     [self.tableView setAllowsMultipleSelectionDuringEditing:YES];
+    [self.delButton setHidden:YES];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *ID = @"cell";
@@ -65,6 +66,8 @@
 - (IBAction)multiDelete:(UIButton *)sender {
 //    self.tableView.editing =YES;
     [self.tableView setEditing:!self.tableView.editing animated:YES];
+    self.delButton.hidden = !self.tableView.editing;
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

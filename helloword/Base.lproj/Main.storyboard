@@ -76,7 +76,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="del" destination="ePI-Ra-sep" id="BwT-us-gsE"/>
+                        <outlet property="delButton" destination="ePI-Ra-sep" id="wuz-WG-avz"/>
                         <outlet property="tableView" destination="laU-gr-fqM" id="b6P-9z-b6P"/>
                     </connections>
                 </viewController>
