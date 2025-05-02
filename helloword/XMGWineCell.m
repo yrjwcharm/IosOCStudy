@@ -17,7 +17,7 @@
     if(self =[super initWithStyle:style reuseIdentifier:reuseIdentifier]){
         UIImageView *imageView =[[UIImageView alloc] init];
         imageView.hidden =YES;
-        imageView.image=[UIImage imageNamed:@"home_tab_my_super_high_fragment_sel"];
+        imageView.image=[UIImage imageNamed:@"checked.png"];
         [self.contentView addSubview:imageView];
         self.checkedImageView = imageView;
     }
@@ -25,18 +25,19 @@
 }
 - (void)layoutSubviews{
     [super layoutSubviews];
-    CGFloat WH = 24;
-    CGFloat x = self.contentView.frame.size.width - WH-10;
-    CGFloat y = (self.contentView.frame.size.height-WH)*0.5;
-    self.checkedImageView.frame =CGRectMake(x, y, WH, WH);
+        CGFloat WH = 24;
+        CGFloat x = self.contentView.frame.size.width - WH-10;
+        CGFloat y = (self.contentView.frame.size.height-WH)*0.5;
+        self.checkedImageView.frame =CGRectMake(x, y, WH, WH);
 }
 
 - (void)setWine:(XMGWine *)wine{
+   // 通过模型去决定界面的显示
     _wine = wine;
     self.imageView.image = [UIImage imageNamed:wine.image];
     self.textLabel.text = wine.name;
-    NSLog(@"%@",wine.price);
     self.detailTextLabel.text = [NSString stringWithFormat:@"%@",wine.price];
+    //根据默认的checked属性确定打勾控件是显示还是隐藏
     if(wine.isChecked){
         self.checkedImageView.hidden =NO;
     }else{
