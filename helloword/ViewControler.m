@@ -10,9 +10,8 @@
 #import "MJExtension.h"
 #import "XMGWine.h"
 @interface ViewControler () <UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *wineArray;
-@property(nonatomic,strong) NSMutableArray *selectedIndexPath;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation ViewControler
@@ -25,43 +24,15 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.selectedIndexPath=[NSMutableArray array];
-    //告诉tabview在编辑模式下可以进行多选操作
-    [self.tableView setAllowsMultipleSelectionDuringEditing:YES];
+    self.tableView.rowHeight = 80;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *ID = @"cell";
+    static NSString *ID = @"wine";
+    //使用StoryBoard的话 不用注册与判断 但是必须在Storyboard中设置重用标识
     XMGWineCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[XMGWineCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-        cell.tintColor = [UIColor redColor]; // 设置为红色
-    }
-    cell.wine = self.wineArray[indexPath.row];
     return cell;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.wineArray.count;
-}
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    XMGWine *wine = self.wineArray[indexPath.row];
-    if(wine.isChecked){
-        wine.checked =NO;
-        [self.selectedIndexPath removeObject:indexPath];
-    }else{
-        wine.checked =YES;
-        [self.selectedIndexPath addObject:indexPath];
-    }
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-- (IBAction)remove:(id)sender {
-    NSMutableArray *tempArray =[NSMutableArray array];
-    for (NSIndexPath *indexPath in self.selectedIndexPath) {
-        [tempArray addObject:self.wineArray[indexPath.row]];
-        
-    }
-    [self.wineArray removeObjectsInArray:tempArray];
-    
-    [self.tableView deleteRowsAtIndexPaths:self.selectedIndexPath withRowAnimation:UITableViewRowAnimationAutomatic];
-    [self.selectedIndexPath removeAllObjects];
+    return 20;
 }
 @end
