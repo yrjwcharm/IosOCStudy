@@ -26,6 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.rowHeight = 80;
+    NSNotificationCenter *center =  [NSNotificationCenter defaultCenter] ;
+    [center addObserver:self selector:@selector(plusClick:) name:@"plus" object:nil];
+    [center addObserver:self selector:@selector(minusClick:) name:@"minus" object:nil];
 //    访问了一块已经被系统回收的内存空间，会出现野指针错误
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -35,6 +38,13 @@
     XMGWineCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     cell.wine =self.wineArray[indexPath.row];
     return cell;
+}
+-(void) plusClick:(NSNotification *) note{
+    NSLog(@"%@",@"执行添加");
+}
+-(void) minusClick:(NSNotification *) note{
+    NSLog(@"%@",@"执行递减");
+
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.wineArray.count;
