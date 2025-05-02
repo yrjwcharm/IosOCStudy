@@ -91,8 +91,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="btnAdd" destination="qJZ-Be-Kxe" id="4RW-5d-b5Y"/>
-                                            <outlet property="btnDecrease" destination="6yB-E6-jsg" id="5h0-eE-EVk"/>
+                                            <outlet property="nameLabel" destination="u9v-o9-W6l" id="klY-PE-8BQ"/>
+                                            <outlet property="priceLabel" destination="Iao-hN-PrE" id="uBA-Uv-eXg"/>
+                                            <outlet property="wineImage" destination="bbu-EN-VzA" id="VHU-9J-CwM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
