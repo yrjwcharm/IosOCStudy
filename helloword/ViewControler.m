@@ -46,4 +46,14 @@
     wine.checked = !wine.isChecked;
     [self.tableView reloadData];
 }
+- (IBAction)remove:(id)sender {
+    NSMutableArray *tempArray =[NSMutableArray array];
+    for (XMGWine *wine in self.wineArray) {
+        if(wine.isChecked){
+            [tempArray addObject:wine];
+        }
+    }
+    [self.wineArray removeObjectsInArray:tempArray];
+    [self.tableView reloadData];
+}
 @end
