@@ -12,6 +12,7 @@
 @interface ViewControler () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *wineArray;
+@property(nonatomic,strong) NSMutableArray *selectedIndexPath;
 @end
 
 @implementation ViewControler
@@ -22,9 +23,9 @@
     }
     return _wineArray;
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.selectedIndexPath=[NSMutableArray array];
     //告诉tabview在编辑模式下可以进行多选操作
     [self.tableView setAllowsMultipleSelectionDuringEditing:YES];
 }
@@ -43,17 +44,24 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     XMGWine *wine = self.wineArray[indexPath.row];
-    wine.checked = !wine.isChecked;
-    [self.tableView reloadData];
+    if(wine.isChecked){
+        wine.checked =NO;
+        [self.selectedIndexPath removeObject:indexPath];
+    }else{
+        wine.checked =YES;
+        [self.selectedIndexPath addObject:indexPath];
+    }
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 - (IBAction)remove:(id)sender {
     NSMutableArray *tempArray =[NSMutableArray array];
-    for (XMGWine *wine in self.wineArray) {
-        if(wine.isChecked){
-            [tempArray addObject:wine];
-        }
+    for (NSIndexPath *indexPath in self.selectedIndexPath) {
+        [tempArray addObject:self.wineArray[indexPath.row]];
+        
     }
     [self.wineArray removeObjectsInArray:tempArray];
-    [self.tableView reloadData];
+    
+    [self.tableView deleteRowsAtIndexPaths:self.selectedIndexPath withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.selectedIndexPath removeAllObjects];
 }
 @end
