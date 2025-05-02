@@ -28,6 +28,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *ID = @"wine";
+    //首先从缓存池里边去取，如果缓存池里边没有/也没有注册，他就会从storyboard里边找是否有重用标识 ，就会加载cell绑定标识
     //使用StoryBoard的话 不用注册与判断 但是必须在Storyboard中设置重用标识
     XMGWineCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     return cell;

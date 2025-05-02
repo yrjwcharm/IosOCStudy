@@ -11,6 +11,7 @@
 		59534B4E2DC3A196008E3A91 /* XMGWineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59534B4D2DC3A196008E3A91 /* XMGWineCell.m */; };
 		59534B502DC3A3F1008E3A91 /* wine.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59534B4F2DC3A3F1008E3A91 /* wine.plist */; };
 		59534B532DC3A4AE008E3A91 /* XMGWine.m in Sources */ = {isa = PBXBuildFile; fileRef = 59534B522DC3A4AE008E3A91 /* XMGWine.m */; };
+		59534B572DC4E1B4008E3A91 /* XMGCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 59534B562DC4E1B4008E3A91 /* XMGCircleButton.m */; };
 		59BA0C412D90279700872A01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BA0C402D90279700872A01 /* AppDelegate.m */; };
 		59BA0C442D90279700872A01 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BA0C432D90279700872A01 /* SceneDelegate.m */; };
 		59BA0C4A2D90279700872A01 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 59BA0C492D90279700872A01 /* Base */; };
@@ -27,6 +28,8 @@
 		59534B4F2DC3A3F1008E3A91 /* wine.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = wine.plist; sourceTree = "<group>"; };
 		59534B512DC3A4AE008E3A91 /* XMGWine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGWine.h; sourceTree = "<group>"; };
 		59534B522DC3A4AE008E3A91 /* XMGWine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGWine.m; sourceTree = "<group>"; };
+		59534B552DC4E1B4008E3A91 /* XMGCircleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGCircleButton.h; sourceTree = "<group>"; };
+		59534B562DC4E1B4008E3A91 /* XMGCircleButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGCircleButton.m; sourceTree = "<group>"; };
 		59BA0C3C2D90279700872A01 /* helloword.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloword.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59BA0C3F2D90279700872A01 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		59BA0C402D90279700872A01 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 				59534B4F2DC3A3F1008E3A91 /* wine.plist */,
 				59534B512DC3A4AE008E3A91 /* XMGWine.h */,
 				59534B522DC3A4AE008E3A91 /* XMGWine.m */,
+				59534B552DC4E1B4008E3A91 /* XMGCircleButton.h */,
+				59534B562DC4E1B4008E3A91 /* XMGCircleButton.m */,
 			);
 			path = helloword;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				59BA0C522D90279900872A01 /* main.m in Sources */,
 				59FA8A6E2D9039F900660530 /* ViewControler.m in Sources */,
 				59BA0C442D90279700872A01 /* SceneDelegate.m in Sources */,
+				59534B572DC4E1B4008E3A91 /* XMGCircleButton.m in Sources */,
 				59534B4E2DC3A196008E3A91 /* XMGWineCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

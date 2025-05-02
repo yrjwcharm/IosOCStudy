@@ -8,41 +8,23 @@
 #import "XMGWineCell.h"
 #import "XMGWine.h"
 @interface XMGWineCell()
-@property(weak,nonatomic) UIImageView *checkedImageView;
+@property (weak, nonatomic) IBOutlet UIButton *btnDecrease;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnAdd;
+
 @end
 @implementation XMGWineCell
-
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-    //缓存里去不到 调用，一次性设置
-    if(self =[super initWithStyle:style reuseIdentifier:reuseIdentifier]){
-        UIImageView *imageView =[[UIImageView alloc] init];
-        imageView.hidden =YES;
-        imageView.image=[UIImage imageNamed:@"checked.png"];
-        [self.contentView addSubview:imageView];
-        self.checkedImageView = imageView;
-    }
-    return self;
+//xib storyboard 加载完毕 会调用这个方法
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    //自定义button已经实现
+//    [self setupCircleButton:self.btnAdd];
+//    [self setupCircleButton:self.btnDecrease];
+   
 }
-- (void)layoutSubviews{
-    [super layoutSubviews];
-        CGFloat WH = 24;
-        CGFloat x = self.contentView.frame.size.width - WH-10;
-        CGFloat y = (self.contentView.frame.size.height-WH)*0.5;
-        self.checkedImageView.frame =CGRectMake(x, y, WH, WH);
+-(void) setupCircleButton:(UIButton *) btn{
+    btn.layer.borderWidth=1.0;
+    btn.layer.borderColor =[UIColor orangeColor].CGColor;
+    btn.layer.cornerRadius=self.btnDecrease.frame.size.height *.5;
 }
-
-- (void)setWine:(XMGWine *)wine{
-   // 通过模型去决定界面的显示
-    _wine = wine;
-    self.imageView.image = [UIImage imageNamed:wine.image];
-    self.textLabel.text = wine.name;
-    self.detailTextLabel.text = [NSString stringWithFormat:@"%@",wine.price];
-    //根据默认的checked属性确定打勾控件是显示还是隐藏
-    if(wine.isChecked){
-        self.checkedImageView.hidden =NO;
-    }else{
-        self.checkedImageView.hidden =YES;
-    }
-}
-
 @end
