@@ -69,13 +69,33 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.wineArray.count;
 }
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self.wineArray removeObjectAtIndex:indexPath.row];
-    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-
-}
-- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return @"删除";
+#pragma mark - UITableViewDelegate (滑动操作)
+- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 1. 删除操作
+    UIContextualAction *deleteAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"删除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+        // 从数据源中删除
+        [self.wineArray removeObjectAtIndex:indexPath.row];
+        // 删除表格行
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        completionHandler(YES);
+    }];
+    
+    // 2. 置顶操作
+    UIContextualAction *pinAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:@"置顶" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+        // 将数据移动到数组首位
+        NSString *pinnedItem = self.wineArray[indexPath.row];
+        [self.wineArray removeObjectAtIndex:indexPath.row];
+        [self.wineArray insertObject:pinnedItem atIndex:0];
+        // 移动表格行
+        NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:0 inSection:indexPath.section];
+        [tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];//底层逻辑已经包含了局部刷新功能
+        completionHandler(YES);
+//        self.tableView.editing =NO;
+    }];
+    // 3. 返回配置
+    UISwipeActionsConfiguration *config = [UISwipeActionsConfiguration configurationWithActions:@[deleteAction, pinAction]];
+    config.performsFirstActionWithFullSwipe = NO; // 禁止完全滑动时自动执行第一个动作
+    return config;
 }
 
 @end
