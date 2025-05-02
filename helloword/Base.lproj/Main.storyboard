@@ -18,8 +18,17 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldj-A6-WVw">
                                 <rect key="frame" x="0.0" y="59" width="393" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mij-4d-Yd6">
+                                        <rect key="frame" x="16" y="6.6666666666666714" width="59" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="删除"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
+                                    <constraint firstItem="mij-4d-Yd6" firstAttribute="centerY" secondItem="ldj-A6-WVw" secondAttribute="centerY" id="5lF-Wz-sE8"/>
+                                    <constraint firstItem="mij-4d-Yd6" firstAttribute="leading" secondItem="ldj-A6-WVw" secondAttribute="leading" constant="16" id="Izh-G6-8oD"/>
                                     <constraint firstAttribute="height" constant="48" id="c9E-8U-KzO"/>
                                 </constraints>
                             </view>

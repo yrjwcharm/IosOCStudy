@@ -41,4 +41,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.wineArray.count;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    XMGWine *wine = self.wineArray[indexPath.row];
+    wine.checked = !wine.isChecked;
+    [self.tableView reloadData];
+}
 @end
