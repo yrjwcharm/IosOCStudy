@@ -10,6 +10,7 @@
 #import "MJExtension.h"
 #import "XMGWine.h"
 @interface ViewControler () <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UIButton *del;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *wineArray;
 @end
@@ -45,7 +46,8 @@
         [array addObject:self.wineArray[i]];
     }
     [self.wineArray removeObjectsInArray:array];
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
+    [self.tableView deleteRowsAtIndexPaths:self.tableView.indexPathsForSelectedRows withRowAnimation:UITableViewRowAnimationAutomatic];
 
 }
 #pragma mark -更新数据
@@ -60,7 +62,7 @@
 }
 #pragma mark -批量删除数据--
 
-- (IBAction)delete:(UIButton *)sender {
+- (IBAction)multiDelete:(UIButton *)sender {
 //    self.tableView.editing =YES;
     [self.tableView setEditing:!self.tableView.editing animated:YES];
 }
