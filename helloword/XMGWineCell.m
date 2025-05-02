@@ -37,7 +37,7 @@
     _wine =wine;
     self.wineImage.image=[UIImage imageNamed:wine.image];
     self.nameLabel.text=wine.name;
-    self.priceLabel.text = [NSString stringWithFormat:@"¥%@",wine.price];
+    self.priceLabel.text = [NSString stringWithFormat:@"¥%f",wine.price];
     self.buyCountLabel.text =[NSString stringWithFormat:@"%d",wine.buyCount];
     //根据count决定按钮是否可以点击
     self.btnMinus.enabled = self.wine.buyCount>0;
@@ -48,9 +48,13 @@
 //    [self setWine:self.wine];
 //    self.wine = self.wine;
     self.buyCountLabel.text =[NSString stringWithFormat:@"%d",self.wine.buyCount];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"plus" object:self userInfo:@{@"buyCount":@(self.wine.buyCount)}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"plus" object:self userInfo:@{@"wine":self.wine}];
     
 
+}
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 - (IBAction)btnMinus:(XMGCircleButton *)sender {
         self.wine.buyCount--;
@@ -58,6 +62,6 @@
     if(self.wine.buyCount==0){
         self.btnMinus.enabled=NO;
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"minus" object:self userInfo:@{@"buyCount":@(self.wine.buyCount)}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"minus" object:self userInfo:@{@"wine":self.wine}];
 }
 @end
