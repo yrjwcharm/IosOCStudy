@@ -18,40 +18,9 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldj-A6-WVw">
                                 <rect key="frame" x="0.0" y="59" width="393" height="48"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePI-Ra-sep">
-                                        <rect key="frame" x="16" y="6.6666666666666714" width="59" height="35"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="删除"/>
-                                        <connections>
-                                            <action selector="remove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aKm-7M-LYr"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3V-ih-gWQ">
-                                        <rect key="frame" x="283" y="6.6666666666666714" width="94" height="35"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="批量删除"/>
-                                        <connections>
-                                            <action selector="multiDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NSD-yU-GIc"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIF-dt-pvs">
-                                        <rect key="frame" x="167" y="7" width="59" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="更新"/>
-                                        <connections>
-                                            <action selector="update:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rM4-Xo-i2Y"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
-                                    <constraint firstItem="m3V-ih-gWQ" firstAttribute="centerY" secondItem="ldj-A6-WVw" secondAttribute="centerY" id="Zcm-Az-cas"/>
                                     <constraint firstAttribute="height" constant="48" id="c9E-8U-KzO"/>
-                                    <constraint firstAttribute="trailing" secondItem="m3V-ih-gWQ" secondAttribute="trailing" constant="16" id="hcK-D1-zZa"/>
-                                    <constraint firstItem="ePI-Ra-sep" firstAttribute="centerY" secondItem="ldj-A6-WVw" secondAttribute="centerY" id="rKq-Bk-GIT"/>
-                                    <constraint firstItem="ePI-Ra-sep" firstAttribute="leading" secondItem="ldj-A6-WVw" secondAttribute="leading" constant="16" id="v0m-kW-SS5"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="laU-gr-fqM">
@@ -76,7 +45,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="delButton" destination="ePI-Ra-sep" id="wuz-WG-avz"/>
                         <outlet property="tableView" destination="laU-gr-fqM" id="b6P-9z-b6P"/>
                     </connections>
                 </viewController>
