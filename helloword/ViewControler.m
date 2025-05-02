@@ -35,6 +35,7 @@
     XMGWineCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
         cell = [[XMGWineCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+        cell.tintColor = [UIColor redColor]; // 设置为红色
     }
     cell.wine = self.wineArray[indexPath.row];
     return cell;
