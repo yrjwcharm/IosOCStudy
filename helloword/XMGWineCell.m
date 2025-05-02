@@ -37,7 +37,7 @@
     _wine =wine;
     self.wineImage.image=[UIImage imageNamed:wine.image];
     self.nameLabel.text=wine.name;
-    self.priceLabel.text = [NSString stringWithFormat:@"¥%f",wine.price];
+    self.priceLabel.text = [NSString stringWithFormat:@"¥%.0f",wine.price];
     self.buyCountLabel.text =[NSString stringWithFormat:@"%d",wine.buyCount];
     //根据count决定按钮是否可以点击
     self.btnMinus.enabled = self.wine.buyCount>0;

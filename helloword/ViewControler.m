@@ -46,13 +46,13 @@ double totalPrice =0;
 -(void) plusClick:(NSNotification *) note{
     XMGWine *wine = note.userInfo[@"wine"];
     totalPrice += wine.price;
-    self.totalPriceLabel.text=[NSString stringWithFormat:@"¥%f",totalPrice];
+    self.totalPriceLabel.text=[NSString stringWithFormat:@"¥%.0f",totalPrice];
     
 }
 -(void) minusClick:(NSNotification *) note{
     XMGWine *wine = note.userInfo[@"wine"];
     totalPrice -= wine.price;
-    self.totalPriceLabel.text=[NSString stringWithFormat:@"¥%f",totalPrice];
+    self.totalPriceLabel.text=[NSString stringWithFormat:@"¥%.0f",totalPrice];
 
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
