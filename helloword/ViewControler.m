@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *totalPriceLabel;
 @property (weak, nonatomic) IBOutlet UIButton *btnBuy;
+@property (nonatomic,strong) NSMutableArray *shoppingCar;
 @end
 //    访问了一块已经被系统回收的内存空间，会出现野指针错误
 @implementation ViewControler
@@ -29,6 +30,12 @@ double totalPrice =0;
 //        }
     }
     return _wineArray;
+}
+- (NSMutableArray *)shoppingCar{
+    if(!_shoppingCar){
+        _shoppingCar =[NSMutableArray array];
+    }
+    return _shoppingCar;
 }
 - (void)dealloc
 {
@@ -94,6 +101,9 @@ double totalPrice =0;
     return self.wineArray.count;
 }
 - (IBAction)btnBuy:(UIButton *)sender {
+    for (XMGWine *wine in self.shoppingCar) {
+        NSLog(@"%@买了%d",wine.name,wine.buyCount);
+    }
 }
 - (IBAction)btnClear:(UIButton *)sender {
     for(int i =0;i<self.wineArray.count;i++){
@@ -103,16 +113,24 @@ double totalPrice =0;
     [self.tableView reloadData];
     self.totalPriceLabel.text =@"¥0";
     self.btnBuy.enabled =NO;
+    [self.shoppingCar removeAllObjects];
 }
 - (void)wineDidPlusClick:(XMGWineCell *)cell{
     totalPrice += cell.wine.price;
     self.totalPriceLabel.text=[NSString stringWithFormat:@"¥%.0f",totalPrice];
     self.btnBuy.enabled =YES;
+    if(![self.shoppingCar containsObject:cell.wine]){
+        [self.shoppingCar addObject:cell.wine];
+    }
+    
 }
 - (void)wineDidMinusClick:(XMGWineCell *)cell{
     totalPrice -=cell. wine.price;
     self.totalPriceLabel.text=[NSString stringWithFormat:@"¥%.0f",totalPrice];
     self.btnBuy.enabled= totalPrice>0;
+    if(cell.wine.buyCount==0){
+        [self.shoppingCar removeObject:cell.wine];
+    }
     
 }
 @end
