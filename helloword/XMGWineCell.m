@@ -48,7 +48,7 @@
 //    [self setWine:self.wine];
 //    self.wine = self.wine;
     self.buyCountLabel.text =[NSString stringWithFormat:@"%d",self.wine.buyCount];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"plus" object:self userInfo:@{@"wine":self.wine}];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"plus" object:self userInfo:@{@"wine":self.wine}];
     
 
 }
@@ -62,6 +62,6 @@
     if(self.wine.buyCount==0){
         self.btnMinus.enabled=NO;
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"minus" object:self userInfo:@{@"wine":self.wine}];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"minus" object:self userInfo:@{@"wine":self.wine}];
 }
 @end

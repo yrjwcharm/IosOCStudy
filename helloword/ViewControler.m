@@ -16,12 +16,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalPriceLabel;
 @property (weak, nonatomic) IBOutlet UIButton *btnBuy;
 @end
-
+//    访问了一块已经被系统回收的内存空间，会出现野指针错误
 @implementation ViewControler
 double totalPrice =0;
 - (NSMutableArray *)wineArray{
     if (_wineArray == nil) {
         _wineArray =[XMGWine mj_objectArrayWithFilename:@"wine.plist"];
+        for (XMGWine *wine in self.wineArray) {
+            [wine addObserver:self forKeyPath:@"buyCount" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+        }
     }
     return _wineArray;
 }
@@ -29,11 +32,29 @@ double totalPrice =0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.rowHeight = 80;
-    //监听通知
-    NSNotificationCenter *center =  [NSNotificationCenter defaultCenter] ;
-    [center addObserver:self selector:@selector(plusClick:) name:@"plus" object:nil];
-    [center addObserver:self selector:@selector(minusClick:) name:@"minus" object:nil];
-//    访问了一块已经被系统回收的内存空间，会出现野指针错误
+// #pragma mark - 1.监听通知
+//    NSNotificationCenter *center =  [NSNotificationCenter defaultCenter] ;
+//    [center addObserver:self selector:@selector(plusClick:) name:@"plus" object:nil];
+//    [center addObserver:self selector:@selector(minusClick:) name:@"minus" object:nil];
+}
+#pragma mark - kvo
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(XMGWine *)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"buyCount"]) {
+        int new = [change[NSKeyValueChangeNewKey] intValue];
+        int old = [change[NSKeyValueChangeOldKey] intValue];
+        if(new>old){
+            totalPrice += object.price;
+        }else{
+            totalPrice -= object.price;
+        }
+        self.totalPriceLabel.text=[NSString stringWithFormat:@"¥%.0f",totalPrice];
+        return;
+    }
+    [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+   
+    
+    
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *ID = @"wine";
@@ -69,5 +90,6 @@ double totalPrice =0;
         wine.buyCount =0;
     }
     [self.tableView reloadData];
+    self.btnBuy.enabled =NO;
 }
 @end
