@@ -14,7 +14,16 @@
 
 - (void) viewDidLoad{
     [super viewDidLoad];
-    screenWidth;
+}
+- (IBAction)btnOpenUrl:(id)sender {
+    NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
+            NSLog(@"%@",success ? @"成功" : @"失败");
+        }];
+    }else{
+        NSLog(@"不支持");
+    }
 }
 
 @end
