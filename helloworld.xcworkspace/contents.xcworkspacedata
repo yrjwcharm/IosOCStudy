@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:helloworld.xcodeproj">
+      location = "group:/Users/yanruifeng/iOS/iOSObjectiveCStudy/helloworld.xcodeproj">
    </FileRef>
    <Group
       location = "group:helloworld"
