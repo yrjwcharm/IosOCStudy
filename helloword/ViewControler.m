@@ -106,8 +106,7 @@ double totalPrice =0;
     }
 }
 - (IBAction)btnClear:(UIButton *)sender {
-    for(int i =0;i<self.wineArray.count;i++){
-        XMGWine *wine = self.wineArray[i];
+    for (XMGWine *wine in self.shoppingCar) {
         wine.buyCount =0;
     }
     [self.tableView reloadData];
