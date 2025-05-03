@@ -10,7 +10,7 @@
 #import "MJExtension.h"
 #import "XMGWine.h"
 #import "XMGCircleButton.h"
-@interface ViewControler () <UITableViewDelegate, UITableViewDataSource>
+@interface ViewControler () <UITableViewDelegate, UITableViewDataSource,XMGWineCellDelegate>
 @property (nonatomic, strong) NSMutableArray *wineArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *totalPriceLabel;
@@ -22,11 +22,20 @@ double totalPrice =0;
 - (NSMutableArray *)wineArray{
     if (_wineArray == nil) {
         _wineArray =[XMGWine mj_objectArrayWithFilename:@"wine.plist"];
-        for (XMGWine *wine in self.wineArray) {
-            [wine addObserver:self forKeyPath:@"buyCount" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
-        }
+//        for (XMGWine *wine in self.wineArray) {
+            //只要类的对象用到kvo 苹果就会默认给这个类生成一个子类
+//            [wine valueForKeyPath:@"isa"];
+//            [wine addObserver:self forKeyPath:@"buyCount" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+//        }
     }
     return _wineArray;
+}
+- (void)dealloc
+{
+//    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    for (XMGWine *wine in self.wineArray) {
+        [wine removeObserver:self forKeyPath:@"buyCount" context:nil];
+    }
 }
 #pragma mark -控制器View加载完毕
 - (void)viewDidLoad {
@@ -45,8 +54,10 @@ double totalPrice =0;
         int old = [change[NSKeyValueChangeOldKey] intValue];
         if(new>old){
             totalPrice += object.price;
+            self.btnBuy.enabled =YES;
         }else{
             totalPrice -= object.price;
+            self.btnBuy.enabled= totalPrice>0;
         }
         self.totalPriceLabel.text=[NSString stringWithFormat:@"¥%.0f",totalPrice];
         return;
@@ -62,6 +73,7 @@ double totalPrice =0;
     //使用StoryBoard的话 不用注册与判断 但是必须在Storyboard中设置重用标识
     XMGWineCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     cell.wine =self.wineArray[indexPath.row];
+    cell.delegate = self;
     //通过模型去修改cell的内容
     return cell;
 }
@@ -84,12 +96,23 @@ double totalPrice =0;
 - (IBAction)btnBuy:(UIButton *)sender {
 }
 - (IBAction)btnClear:(UIButton *)sender {
-    self.totalPriceLabel.text =@"¥0";
     for(int i =0;i<self.wineArray.count;i++){
         XMGWine *wine = self.wineArray[i];
         wine.buyCount =0;
     }
     [self.tableView reloadData];
+    self.totalPriceLabel.text =@"¥0";
     self.btnBuy.enabled =NO;
+}
+- (void)wineDidPlusClick:(XMGWineCell *)cell{
+    totalPrice += cell.wine.price;
+    self.totalPriceLabel.text=[NSString stringWithFormat:@"¥%.0f",totalPrice];
+    self.btnBuy.enabled =YES;
+}
+- (void)wineDidMinusClick:(XMGWineCell *)cell{
+    totalPrice -=cell. wine.price;
+    self.totalPriceLabel.text=[NSString stringWithFormat:@"¥%.0f",totalPrice];
+    self.btnBuy.enabled= totalPrice>0;
+    
 }
 @end

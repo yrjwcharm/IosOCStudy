@@ -49,7 +49,9 @@
 //    self.wine = self.wine;
     self.buyCountLabel.text =[NSString stringWithFormat:@"%d",self.wine.buyCount];
 //    [[NSNotificationCenter defaultCenter] postNotificationName:@"plus" object:self userInfo:@{@"wine":self.wine}];
-    
+    if([self.delegate respondsToSelector:@selector(wineDidPlusClick:)]){
+        [self.delegate wineDidPlusClick:self];
+    }
 
 }
 - (void)dealloc
@@ -62,6 +64,11 @@
     if(self.wine.buyCount==0){
         self.btnMinus.enabled=NO;
     }
+    //判断代理有没有实现这个方法
+    if([self.delegate respondsToSelector:@selector(wineDidMinusClick:)]){
+        [self.delegate wineDidMinusClick:self];
+    }
+
 //    [[NSNotificationCenter defaultCenter] postNotificationName:@"minus" object:self userInfo:@{@"wine":self.wine}];
 }
 @end
