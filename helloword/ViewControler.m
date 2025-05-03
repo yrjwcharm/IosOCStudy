@@ -13,8 +13,8 @@
 @interface ViewControler () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) NSMutableArray *wineArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-//@property(nonatomic,assign) double totalPrice;
 @property (weak, nonatomic) IBOutlet UILabel *totalPriceLabel;
+@property (weak, nonatomic) IBOutlet UIButton *btnBuy;
 @end
 
 @implementation ViewControler
@@ -41,21 +41,33 @@ double totalPrice =0;
     //使用StoryBoard的话 不用注册与判断 但是必须在Storyboard中设置重用标识
     XMGWineCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     cell.wine =self.wineArray[indexPath.row];
+    //通过模型去修改cell的内容
     return cell;
 }
+
 -(void) plusClick:(NSNotification *) note{
     XMGWine *wine = note.userInfo[@"wine"];
     totalPrice += wine.price;
     self.totalPriceLabel.text=[NSString stringWithFormat:@"¥%.0f",totalPrice];
-    
+    self.btnBuy.enabled =YES;
 }
 -(void) minusClick:(NSNotification *) note{
     XMGWine *wine = note.userInfo[@"wine"];
     totalPrice -= wine.price;
     self.totalPriceLabel.text=[NSString stringWithFormat:@"¥%.0f",totalPrice];
-
+    self.btnBuy.enabled= totalPrice>0;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.wineArray.count;
+}
+- (IBAction)btnBuy:(UIButton *)sender {
+}
+- (IBAction)btnClear:(UIButton *)sender {
+    self.totalPriceLabel.text =@"¥0";
+    for(int i =0;i<self.wineArray.count;i++){
+        XMGWine *wine = self.wineArray[i];
+        wine.buyCount =0;
+    }
+    [self.tableView reloadData];
 }
 @end

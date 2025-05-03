@@ -135,11 +135,17 @@
                                         <buttonConfiguration key="configuration" style="plain" title="清空购物车">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="btnClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZoR-pc-lJb"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wl-8v-Nwf" userLabel="购买">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wl-8v-Nwf" userLabel="购买">
                                         <rect key="frame" x="215.66666666666666" y="4.6666666666666288" width="58.666666666666657" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="购买"/>
+                                        <connections>
+                                            <action selector="btnBuy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oSH-6M-9bS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -169,6 +175,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnBuy" destination="0Wl-8v-Nwf" id="J4B-5r-XCc"/>
                         <outlet property="tableView" destination="Te5-pk-Dho" id="wZ5-nN-Nhp"/>
                         <outlet property="totalPriceLabel" destination="4t9-QY-7rP" id="26G-Z8-ta7"/>
                     </connections>
