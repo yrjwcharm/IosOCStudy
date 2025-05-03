@@ -14,6 +14,12 @@
 
 - (void) viewDidLoad{
     [super viewDidLoad];
+    
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"app_icon.png"]];
+    UIImageView *imageView =[[UIImageView alloc] init];
+    imageView.image = [UIImage imageNamed:@"app_icon.png"];
+    [imageView sizeToFit];
+    [self.view addSubview:imageView];
 }
 - (IBAction)btnOpenUrl:(id)sender {
     NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];
