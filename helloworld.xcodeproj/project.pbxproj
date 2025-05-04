@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		3F2598961280252142B07449 /* Pods_helloword.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D576D8FDD9276846E4D11662 /* Pods_helloword.framework */; };
 		5902FFDE2DC5F4EE001C50BB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EAFCE22DC5E37D007BE4D1 /* SceneDelegate.m */; };
-		5902FFDF2DC5F4F4001C50BB /* ViewControler.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EAFCE42DC5E37D007BE4D1 /* ViewControler.m */; };
+		5902FFDF2DC5F4F4001C50BB /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EAFCE42DC5E37D007BE4D1 /* RootViewController.m */; };
 		5902FFE02DC5F4F9001C50BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EAFCDE2DC5E37D007BE4D1 /* main.m */; };
 		5902FFE12DC5F4FD001C50BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EAFCD82DC5E37D007BE4D1 /* AppDelegate.m */; };
+		5902FFF02DC71C87001C50BB /* RootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5902FFEF2DC71C87001C50BB /* RootView.xib */; };
 		59EAFCE72DC5E37D007BE4D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59EAFCD92DC5E37D007BE4D1 /* Assets.xcassets */; };
 		59EAFCE92DC5E37D007BE4D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59EAFCDD2DC5E37D007BE4D1 /* LaunchScreen.storyboard */; };
 		59EAFCEB2DC5E37D007BE4D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59EAFCE02DC5E37D007BE4D1 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		113BB0C3DE5AF86D833D131A /* Pods-helloword.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helloword.debug.xcconfig"; path = "Target Support Files/Pods-helloword/Pods-helloword.debug.xcconfig"; sourceTree = "<group>"; };
+		5902FFEF2DC71C87001C50BB /* RootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootView.xib; sourceTree = "<group>"; };
 		59BA0C3C2D90279700872A01 /* helloworld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloworld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59EAFCD72DC5E37D007BE4D1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		59EAFCD82DC5E37D007BE4D1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -30,8 +32,8 @@
 		59EAFCDF2DC5E37D007BE4D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59EAFCE12DC5E37D007BE4D1 /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		59EAFCE22DC5E37D007BE4D1 /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		59EAFCE32DC5E37D007BE4D1 /* ViewControler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControler.h; sourceTree = "<group>"; };
-		59EAFCE42DC5E37D007BE4D1 /* ViewControler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControler.m; sourceTree = "<group>"; };
+		59EAFCE32DC5E37D007BE4D1 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		59EAFCE42DC5E37D007BE4D1 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		997A1205EEC58502052DB0F3 /* Pods-helloword.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-helloword.release.xcconfig"; path = "Target Support Files/Pods-helloword/Pods-helloword.release.xcconfig"; sourceTree = "<group>"; };
 		D576D8FDD9276846E4D11662 /* Pods_helloword.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_helloword.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -79,8 +81,9 @@
 				59EAFCDB2DC5E37D007BE4D1 /* Info.plist */,
 				59EAFCE12DC5E37D007BE4D1 /* SceneDelegate.h */,
 				59EAFCE22DC5E37D007BE4D1 /* SceneDelegate.m */,
-				59EAFCE32DC5E37D007BE4D1 /* ViewControler.h */,
-				59EAFCE42DC5E37D007BE4D1 /* ViewControler.m */,
+				59EAFCE32DC5E37D007BE4D1 /* RootViewController.h */,
+				59EAFCE42DC5E37D007BE4D1 /* RootViewController.m */,
+				5902FFEF2DC71C87001C50BB /* RootView.xib */,
 			);
 			path = helloworld;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			files = (
 				59EAFCE92DC5E37D007BE4D1 /* LaunchScreen.storyboard in Resources */,
 				59EAFCE72DC5E37D007BE4D1 /* Assets.xcassets in Resources */,
+				5902FFF02DC71C87001C50BB /* RootView.xib in Resources */,
 				59EAFCEB2DC5E37D007BE4D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,7 +222,7 @@
 			files = (
 				5902FFE12DC5F4FD001C50BB /* AppDelegate.m in Sources */,
 				5902FFE02DC5F4F9001C50BB /* main.m in Sources */,
-				5902FFDF2DC5F4F4001C50BB /* ViewControler.m in Sources */,
+				5902FFDF2DC5F4F4001C50BB /* RootViewController.m in Sources */,
 				5902FFDE2DC5F4EE001C50BB /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

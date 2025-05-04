@@ -6,7 +6,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "RootViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,21 +16,16 @@
 //应用程序启动完毕后diadFinishLaunchingWithOptions方法会被调用
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSLog(@"应用程序启动完毕");
-       self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    //加载指定的控制器
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-       UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-    // 2. 加载箭头指向的控制器
-//    UIViewController *vc1=  [storyboard instantiateInitialViewController];
-       
-//    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view.backgroundColor = [UIColor redColor];
-       // 3. 设置根控制器
-       self.window.rootViewController = vc;
-       NSLog(@"隐藏%@",self.window);
-       [self.window makeKeyAndVisible]; //设置应用程序的主窗口，并显示出来
-       NSLog(@"显示%@",self.window);
-
+     //1.创建窗口
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window.backgroundColor =[UIColor orangeColor];
+    //2.设置窗口的根视图控制器
+    RootViewController *rootVC = [[RootViewController alloc] init];
+    //会找与当前控制器相同名字的xib文件 如果没有的话，还会继续找去掉Controller后缀的xib文件
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:rootVC];
+    //3.显示窗口
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 //应用程序将要失去焦点时会调用这个方法
