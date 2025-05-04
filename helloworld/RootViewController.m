@@ -7,6 +7,7 @@
 
 #import "RootViewController.h"
 #import "MJExtension.h"
+#import "SecondViewController.h"
 @interface RootViewController()
 @end
 
@@ -16,5 +17,9 @@
 - (void) viewDidLoad{
     [super viewDidLoad];
    
+}
+- (IBAction)btnSkipSecond:(id)sender {
+    SecondViewController *secondVC = [[SecondViewController alloc] init];
+    [self.navigationController pushViewController:secondVC animated:YES];
 }
 @end
