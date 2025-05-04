@@ -7,7 +7,6 @@
 
 #import "RootViewController.h"
 #import "MJExtension.h"
-#import "SecondViewController.h"
 @interface RootViewController()
 @end
 
@@ -19,7 +18,15 @@
    
 }
 - (IBAction)btnSkipSecond:(id)sender {
-    SecondViewController *secondVC = [[SecondViewController alloc] init];
-    [self.navigationController pushViewController:secondVC animated:YES];
+   [self.navigationController pushViewController:[NSClassFromString(@"SecondViewController") new] animated:YES];
+}
+- (IBAction)btnSecond:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SecondStoryboard" bundle:nil];
+
+    // 通过 Storyboard ID 实例化控制器
+    UIViewController *newVC = [storyboard instantiateInitialViewController];
+
+    // 或通过导航控制器 Push（需嵌入 UINavigationController）
+    [self.navigationController pushViewController:newVC animated:YES];
 }
 @end

@@ -6,7 +6,7 @@
 //
 
 #import "SecondViewController.h"
-#import "ThirdViewController.h"
+
 @interface SecondViewController ()
 
 @end
@@ -15,7 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+   
 }
 
 /*
@@ -27,9 +27,8 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (IBAction)btnSkipThrid:(id)sender {
-    [self.navigationController pushViewController:[[ThirdViewController alloc] init] animated:YES];
+- (IBAction)btnback:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
-
 
 @end

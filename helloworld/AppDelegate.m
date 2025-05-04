@@ -20,7 +20,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    self.window.backgroundColor =[UIColor orangeColor];
     //2.设置窗口的根视图控制器
-    RootViewController *rootVC = [[RootViewController alloc] init];
+    //2.1.通过storyboard创建控制器 instantiateInitialViewController会加载箭头指向的控制器
+//    RootViewController *rootVC = [storyboard instantiateInitialViewController];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    RootViewController *rootVC = [storyboard instantiateInitialViewController];
+//    RootViewController *rootVC =  [storyboard instantiateViewControllerWithIdentifier:@"rootVC"];
+//    rootVC.view.backgroundColor = [UIColor whiteColor];
     //会找与当前控制器相同名字的xib文件 如果没有的话，还会继续找去掉Controller后缀的xib文件
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:rootVC];
     //3.显示窗口
